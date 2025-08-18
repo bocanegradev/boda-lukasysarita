@@ -1,0 +1,645 @@
+/* Importar una fuente elegante de Google Fonts para los nombres */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lato:wght@300&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');*/
+
+/* Reset básico y estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Contenedor principal de la portada */
+.hero-section {
+    height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+    width: 100%;
+    
+    /* Reemplaza 'fondo-boda.jpg' con el nombre de tu foto */
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 50%), url('images/fondo-boda.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    position: relative; /* Necesario para posicionar elementos internos */
+    color: #4B4B4B; /* Color de texto oscuro para buen contraste */
+}
+
+/* Decoración de hojas */
+.hojas-decoracion {
+    position: absolute;
+    top: 20px;
+    width: 250px; /* Ajusta el tamaño según tu imagen */
+    opacity: 0.9;
+}
+
+/* Contenedor para centrar los textos */
+.contenedor-texto {
+    margin-top: 50px; /* Empuja el texto un poco hacia abajo */
+}
+
+/* Estilo para "NUESTRA BODA" */
+.subtitulo-boda {
+    font-size: 0.9rem;
+    letter-spacing: 4px; /* Espaciado entre letras */
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los nombres de los novios */
+.nombres-novios {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem; /* Tamaño grande para los nombres */
+    font-weight: 400;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Estilo especial para el '&' */
+.ampersand {
+    font-size: 3.5rem;
+    font-style: italic;
+    font-weight: 700;
+    color: #798A70; /* Un tono verde olivo suave */
+}
+
+/* Botón de control de música */
+.boton-musica {
+    position: fixed; /* <--- ¡ESTE ES EL CAMBIO IMPORTANTE! */
+    top: 25px;
+    right: 25px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #4B4B4B;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.boton-musica:hover {
+    transform: scale(1.1);
+}
+
+/*
+============================================
+ ESTILOS PARA LA NUEVA SECCIÓN DE INFORMACIÓN
+============================================
+*/
+
+.seccion-info {
+    background-color: #ffffff; /* Fondo blanco para esta sección */
+    position: relative;
+    padding: 80px 20px; /* Espaciado interno generoso */
+    color: #555;
+}
+
+/* Div superior que muestra un trozo de la imagen de fondo principal */
+.peek-a-boo-fondo {
+    width: 100%;
+    height: 60px; /* La altura que tendrá la franja de imagen */
+    background-image: url('images/fondo-boda.jpg');
+    background-size: cover;
+    /* La posición es clave para que muestre la parte correcta de la imagen */
+    background-position: center 35%; 
+    background-attachment: fixed; /* ¡Este es el truco para el efecto parallax! */
+}
+
+/* Contenedor general para centrar el contenido */
+.seccion-info .contenedor {
+    max-width: 600px; /* Ancho máximo para legibilidad */
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Estilo para el bloque de la cita bíblica */
+.seccion-info blockquote {
+    border: none;
+    margin: 40px 0;
+    padding: 0;
+    position: relative;
+}
+
+.seccion-info blockquote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.seccion-info blockquote footer {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-size: 1rem;
+    color: #888;
+}
+
+/* Comillas decorativas gigantes */
+.seccion-info blockquote::before,
+.seccion-info blockquote::after {
+    font-family: 'Times New Roman', serif;
+    font-size: 6rem;
+    color: #e0e0e0;
+    position: absolute;
+    line-height: 1;
+}
+
+.seccion-info blockquote::before {
+    content: '“';
+    top: -20px;
+    left: -20px;
+}
+
+.seccion-info blockquote::after {
+    content: '”';
+    bottom: -30px;
+    right: -20px;
+}
+
+/* Párrafo con el texto de la invitación */
+.texto-invitacion {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-top: 50px;
+}
+
+/* Decoración de hojas en la parte inferior de la sección */
+.hojas-decoracion-abajo {
+    display: block;
+    margin: 60px auto 0 auto; /* Centrado y con espacio superior */
+    width: 200px;
+}
+
+/*
+=====================================
+ ESTILOS PARA LA SECCIÓN DEL CONTADOR
+=====================================
+*/
+.seccion-countdown {
+    background-color: #798A70; /* Mismo verde olivo del '&' */
+    color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.seccion-countdown .fecha-boda {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+#countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.tiempo {
+    display: flex;
+    flex-direction: column;
+}
+
+.tiempo span {
+    font-family: 'Lato', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.tiempo p {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+/*
+=======================================
+ ESTILOS PARA LA SECCIÓN DE LA CEREMONIA
+=======================================
+*/
+.seccion-lugar {
+    background-color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+    color: #555;
+}
+
+.seccion-lugar .contenedor {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.seccion-lugar h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #888;
+}
+
+.icono-anillos {
+    font-size: 2.5rem;
+    color: #c0c0c0; /* Un color plateado */
+    margin: 20px 0;
+}
+
+/* Agrega esta línea si no tienes el ícono de los anillos 
+   Para eso, asegúrate de tener la última versión de FontAwesome en tu HTML */
+.fa-rings-wedding::before { content: "\f81b"; }
+
+
+.seccion-lugar h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 10px 0;
+    color: #4B4B4B;
+}
+
+.seccion-lugar p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 5px 0 20px 0;
+}
+
+.mapa-contenedor {
+    margin-top: 30px;
+    border-radius: 15px; /* Bordes redondeados para el mapa */
+    overflow: hidden; /* Asegura que el iframe respete los bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.mapa-contenedor iframe {
+    width: 100%; /* El mapa ocupa todo el ancho del contenedor */
+    height: 350px;
+    border: none;
+}
+
+/* Importar una fuente cursiva/script para la pantalla de entrada */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/*
+=====================================
+ ESTILOS PARA LA PANTALLA DE BIENVENIDA
+=====================================
+*/
+#pantalla-entrada {
+    position: fixed; /* Cubre toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f9f8f6; /* Un color beige/hueso muy claro */
+    z-index: 9999; /* Se asegura de estar por encima de todo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1.5s ease; /* Animación de desvanecimiento */
+}
+
+/* Clase que usará JS para ocultar la pantalla */
+#pantalla-entrada.oculto {
+    opacity: 0;
+    pointer-events: none; /* Impide que se pueda hacer clic en ella cuando está oculta */
+}
+
+.flores-entrada {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 280px !important;
+    transform: translate(14%, -14%);
+}
+
+.contenido-entrada {
+    text-align: center;
+    color: #4B4B4B;
+}
+
+.nombres-novios-entrada {
+    font-family: "Cormorant Garamond", serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 3rem !important;
+    color: #000000;
+    margin: 50px 0 40px 0;
+}
+
+.sobre-contenedor {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.sobre-contenedor:hover {
+    transform: scale(1.1);
+}
+
+.imagen-sobre {
+    width: 200px;
+}
+
+.texto-sobre {
+    color: #BF8E6B;
+    text-align: center;
+    margin-top: -10px; /* Espacio para separarlo del sobre */
+}
+
+.texto-sobre i {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.texto-sobre p {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/*
+====================================================
+ CLASES DE UTILIDAD (REUTILIZABLES)
+====================================================
+*/
+/* Para títulos elegantes como 'Código de vestimenta' */
+.titulo-script {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    font-weight: normal;
+    color: #BF8E6B; /* Color cobrizo */
+    margin: 15px 0;
+}
+
+/* Para subtítulos en mayúsculas como 'FORMAL' */
+.subtitulo-mayusculas {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #888;
+    margin: 25px 0;
+}
+
+/*
+====================================================
+ ESTILOS PARA LA SECCIÓN DE CÓDIGO DE VESTIMENTA
+====================================================
+*/
+.seccion-vestimenta {
+    background-color: #f9f8f6; /* Mismo fondo beige que la pantalla de entrada */
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden; /* Evita que las flores generen scroll horizontal */
+}
+
+/* Contenedor con z-index para que el texto esté sobre las flores */
+.seccion-vestimenta .contenedor {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.flores-vestimenta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    transform: translate(-30%, -20%); /* Posiciona la flor en la esquina */
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.vestimenta-iconos {
+    color: #BF8E6B; /* Color cobrizo */
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.vestimenta-iconos .fa-person-dress {
+    margin-right: 15px; /* Espacio entre los dos iconos */
+}
+
+.detalles-vestimenta {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+}
+
+.detalles-vestimenta p {
+    margin: 10px 0;
+}
+
+.paleta-colores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Espacio entre los círculos */
+    margin-top: 10px;
+}
+
+.color-circulo {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+}
+
+.color-circulo:hover {
+    transform: scale(1.1);
+}
+
+/*
+=====================================
+ ESTILOS PARA LA SECCIÓN DE OBSEQUIO
+=====================================
+*/
+.seccion-obsequio {
+    background-color: #ffffff; /* Alternamos de vuelta al fondo blanco */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.seccion-obsequio .contenedor {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Le damos un color específico al título en esta sección */
+.seccion-obsequio .subtitulo-boda {
+    color: #798A70; /* Verde olivo */
+    margin-bottom: 40px;
+}
+
+.obsequio-icono {
+    color: #798A70; /* Verde olivo */
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+
+.texto-obsequio {
+    color: #555;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 550px; /* Limitamos el ancho para una mejor lectura */
+    margin: 0 auto; /* Centramos el bloque de texto */
+}
+
+/*
+====================================================
+ ESTILOS PARA LA SECCIÓN DE CONFIRMAR ASISTENCIA
+====================================================
+*/
+.seccion-confirmar {
+    background-color: #f9f8f6; /* Fondo beige para alternar */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.seccion-confirmar .contenedor {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.texto-confirmar {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 10px auto 40px auto; /* Espaciado superior/inferior */
+}
+
+.boton-principal {
+    display: inline-block;
+    background-color: #798A70; /* Verde olivo */
+    color: #ffffff;
+    padding: 15px 40px;
+    border-radius: 50px; /* Bordes totalmente redondeados (píldora) */
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.boton-principal:hover {
+    background-color: #637158; /* Verde un poco más oscuro */
+    transform: translateY(-3px); /* Efecto de levantarse */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/*
+=====================================
+ ESTILOS PARA EL PIE DE PÁGINA (FOOTER)
+=====================================
+*/
+.pie-pagina {
+    position: relative; /* Necesario para la capa de superposición */
+    padding: 120px 20px; /* Aumentamos el padding para darle más altura y visibilidad a la foto */
+    text-align: center;
+    color: #ffffff; /* Cambiamos el color del texto a blanco */
+    
+    /* --- IMAGEN DE FONDO Y CAPA OSCURA --- */
+    /* Reemplaza 'foto-footer.jpg' por el nombre de tu imagen */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/foto-footer.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto parallax opcional, ¡se ve genial! */
+}
+
+.pie-pagina p {
+    margin: 5px 0;
+    font-family: 'Lato', sans-serif;
+    position: relative; /* Asegura que el texto esté sobre la capa de superposición */
+    z-index: 2;
+}
+
+/* Ajustamos el estilo de los nombres para que también sean blancos */
+.pie-pagina .nombres-novios-entrada {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff; /* Cambiamos el color a blanco */
+}
+
+/* Media Query para ajustar tamaños en pantallas más pequeñas (móviles) */
+@media (max-width: 600px) {
+    .hojas-decoracion {
+        width: 200px;
+    }
+
+    .nombres-novios {
+        font-size: 3rem; /* Reduce el tamaño de la fuente en móviles */
+    }
+
+    .ampersand {
+        font-size: 2.5rem;
+    }
+    .seccion-info {
+        padding: 60px 20px;
+    }
+
+    .seccion-info blockquote::before {
+        left: -10px;
+    }
+
+    .seccion-info blockquote::after {
+        right: -10px;
+    }
+
+    .seccion-info blockquote p {
+        font-size: 1.3rem;
+    }
+    .tiempo span {
+        font-size: 2rem; /* Números del contador más pequeños */
+    }
+    #countdown-timer {
+        gap: 20px; /* Menos espacio entre los números */
+    }
+    .seccion-lugar h3 {
+        font-size: 2rem; /* Nombre del lugar más pequeño */
+    }
+
+    .nombres-novios-entrada {
+        font-size: 4rem;
+    }
+    .flores-entrada {
+        width: 180px;
+    }
+    .titulo-script {
+        font-size: 2.5rem;
+    }
+    .flores-vestimenta {
+        width: 180px;
+    }
+    .color-circulo {
+        width: 35px;
+        height: 35px;
+    }
+}

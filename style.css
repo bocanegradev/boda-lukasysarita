@@ -1,0 +1,706 @@
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?&family=Forum&family=Cormorant+Garamond:wght@400;700&family=Lato:wght@300&family=Lora:ital,wght@0,400..700;1,400..700&family=Castoro:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* Importa otra fuente de Google, esta vez una tipo "script" o manuscrita. */
+/*@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');*/
+
+/* Reset básico y estilos generales */
+/* Estas reglas se aplican a toda la página. */
+body, html {
+    margin: 0; /* Elimina los márgenes que los navegadores ponen por defecto. */
+    padding: 0; /* Elimina el relleno que los navegadores ponen por defecto. */
+    width: 100%; /* Hace que la página ocupe todo el ancho de la pantalla. */
+    height: 100%; /* Hace que la página ocupe todo el alto de la pantalla. */
+    font-family: 'Lato', sans-serif; /* Establece el tipo de letra principal para toda la web. */
+    background-color: #f4f4f4; /* Pone un color de fondo gris claro a toda la página. */
+}
+
+/*
+=====================================
+ ESTILOS PARA LA PANTALLA DE BIENVENIDA
+=====================================
+*/
+#pantalla-entrada {
+    position: fixed; /* Fija la pantalla para que cubra toda la ventana. */
+    top: 0; /* Pega la pantalla al borde superior. */
+    left: 0; /* Pega la pantalla al borde izquierdo. */
+    width: 100%; /* Ancho total de la pantalla. */
+    height: 100%; /* Alto total de la pantalla. */
+    background-color: #f9f8f6; /* Color de fondo beige claro. */
+    z-index: 9999; /* Se asegura de que esta pantalla esté por encima de absolutamente todo. */
+    display: flex; /* Activa el modo flexible. */
+    justify-content: center; /* Centra el contenido verticalmente. */
+    align-items: center; /* Centra el contenido horizontalmente. */
+    transition: opacity 1.5s ease; /* Transición para ocultar la pantalla de entrada (animación suave de 1.5s). */
+}
+
+/* Clase que se añade con JavaScript para ocultar la pantalla */
+#pantalla-entrada.oculto {
+    opacity: 0; /* La hace completamente transparente. */
+    pointer-events: none; /* Impide que se pueda interactuar con ella (hacer clic) cuando está oculta. */
+}
+
+.flores-entrada {
+    position: absolute; /* Posicionamiento exacto. */
+    top: 0; /* Arriba. */
+    right: 0; /* A la derecha. */
+    width: 280px !important; /* Ancho de la imagen de flores. '!important' fuerza a que se aplique este ancho. */
+    transform: translate(14%, -18%); /* Mueve la imagen para que se salga un poco de la esquina. */
+}
+
+.contenido-entrada {
+    text-align: center; /* Centra el texto. */
+}
+
+.nombres-novios-entrada {
+    /*font-family: "kulachat"; /* Fuente elegante. */
+    /*font-style: normal; /* Estilo de fuente normal (no cursiva). */
+    font-family: "Forum", serif;
+    font-size: 2.5rem !important; /* Tamaño de letra grande. */
+    font-weight: 550 !important; /* Grosor de letra medio. */
+    letter-spacing: 3px; /* Aumenta el espacio entre letras en 2 píxeles */
+    color: #000000; /* Color de texto negro. */
+    margin: 35px 0 15px 0; /* Espacio arriba y abajo. */
+}
+
+.sobre-contenedor {
+    position: relative; /* Necesario para efectos de posicionamiento. */
+    cursor: pointer; /* El cursor se convierte en una mano. */
+    transition: transform 0.5s ease; /* Animación suave al cambiar de tamaño. */
+}
+
+.sobre-contenedor:hover {
+    transform: scale(1.1); /* Agranda el sobre un 10% al pasar el ratón por encima. */
+}
+
+.imagen-sobre {
+    width: 200px; /* Ancho de la imagen del sobre. */
+}
+
+.texto-sobre {
+    position: absolute; /* Posiciona el texto sobre la imagen. */
+    bottom: 5px; /* Lo ubica a 20px del borde inferior del sobre. */
+    left: 0; /* Lo alinea al borde izquierdo. */
+    right: 0; /* Lo alinea al borde derecho. */
+    color: #551b1d; /* Color cobrizo para el texto. */
+    text-align: center; /* Texto centrado. */
+    font-size: 0.05rem !important; /* Tamaño de texto pequeño. */
+}
+
+.texto-sobre i {
+    font-size: 1rem; /* Tamaño del ícono (si lo hay). */
+    margin-bottom: 8px; /* Espacio debajo del ícono. */
+}
+
+.texto-sobre p {
+    font-family: 'Lora', sans-serif; /* Fuente principal. */
+    font-size: 0.9rem; /* Tamaño de letra pequeño. */
+    margin: 0; /* Sin márgenes. */
+}
+
+.texto-reserva {
+    position: absolute; /* Permite posicionarlo de forma precisa */
+    bottom: 110px;       /* Lo sitúa a 60px del borde inferior */
+    left: 50%;          /* Lo mueve al centro horizontal */
+    transform: translateX(-50%); /* Centra el texto perfectamente */
+    width: 90%;         /* Ocupa el 90% del ancho para evitar que toque los bordes */
+    padding: 10px;     /* Añade un poco de espacio interno */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    font-family: 'Lato', sans-serif; /* O la fuente que estés usando para párrafos */
+    font-size: 1rem;
+    color: #2d2d2d; /* Un gris suave para que no compita con el título */
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Contenedor principal de la portada */
+.hero-section {
+    height: 100vh; /* Hace que esta sección ocupe el 100% del alto de la pantalla del dispositivo. */
+    width: 100%; /* Hace que esta sección ocupe el 100% del ancho de la pantalla. */
+    
+    /* Pone una imagen de fondo. 'linear-gradient' añade un degradado blanco que se desvanece para que el texto se lea mejor. */
+    background-image: linear-gradient(to bottom, rgba(249, 248, 246, 1), rgba(255, 255, 255, 0) 50%), url('images/fondo-boda-4.jpg');
+    /*background-image: url('images/fondo-boda-3.jpg');*/
+    background-size: cover; /* Asegura que la imagen de fondo cubra toda la sección sin deformarse. */
+    background-position: center; /* Centra la imagen de fondo. */
+    
+    display: flex; /* Activa un modo de diseño flexible para alinear fácilmente el contenido. */
+    flex-direction: column; /* Apila los elementos uno encima del otro. */
+    justify-content: center; /* Centra el contenido verticalmente. */
+    text-align: center; /* Centra el texto. */
+    
+    position: relative; /* Permite posicionar elementos hijos (como las hojas) de forma precisa dentro de esta sección. */
+}
+
+/* Decoración de hojas */
+.hojas-decoracion {
+    position: absolute; /* Permite colocar la imagen en un lugar exacto dentro de su contenedor padre (hero-section). */
+    top: -20px; /* La coloca a 20 píxeles del borde superior. */
+    width: 400px !important; /* Define el ancho de la imagen de las hojas. */
+    /*opacity: 0.9;*( /* Hace la imagen un poco transparente (90% visible). */
+}
+
+/* Contenedor para centrar los textos */
+.contenedor-texto {
+    margin-top: -550px; /* Añade un margen en la parte de arriba para empujar el texto hacia abajo. */
+}
+
+/* Estilo para "NUESTRA BODA" */
+.subtitulo-boda {
+    font-size: 1rem; /* Define el tamaño del texto. */
+    letter-spacing: 4px; /* Añade espacio entre cada letra. */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas. */
+    color: #000000; /* Le da un color negro. */
+}
+
+/* Estilo para los nombres de los novios */
+.nombres-novios {
+    font-family: 'Forum', serif;
+    font-size: 3.5rem !important; /* Hace el texto de los nombres muy grande. */
+    font-weight: 600; /* Define el grosor de la letra (400 es normal). */
+    letter-spacing: 2px; /* Aumenta el espacio entre letras en 2 píxeles */
+    margin: 0;
+    line-height: 1; /* Aumentamos un poco la altura de línea para dar espacio */
+    color: #000000; /* Le da un color negro. */
+
+    /* Convertimos el contenedor en una cuadrícula (grid) */
+    display: grid;
+
+    /* Opcional: ajusta el ancho máximo del contenedor de los nombres */
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Alineamos el primer nombre a la izquierda de la cuadrícula */
+.nombres-novios .nombre-uno {
+    justify-self: start;
+    margin-left: 0;
+}
+
+/* Alineamos el segundo nombre a la derecha de la cuadrícula */
+.nombres-novios .nombre-dos {
+    justify-self: end;
+    margin-right: 0px;
+}
+
+/* Estilo especial para el '&' (se mantiene centrado por defecto) */
+.nombres-novios .ampersand {
+    font-size: 3.5rem;
+    font-style: italic;
+    font-weight: 700;
+    color: #191919; /* Un tono verde olivo suave */
+    justify-self: center; /* Aseguramos que quede centrado */
+}
+
+/* Estilo especial para el '&' */
+.ampersand {
+    font-size: 3.5rem; /* Tamaño de letra para el símbolo '&'. */
+    font-style: italic; /* Pone el texto en cursiva. */
+    font-weight: 700; /* Hace la letra más gruesa (negrita). */
+    color: #191919; /* Le da un color verde olivo. */
+}
+
+/* Botón de control de música */
+.boton-musica {
+    position: fixed; /* Fija el botón en la pantalla, no se mueve al hacer scroll. */
+    top: 25px; /* Lo coloca a 25 píxeles del borde superior de la pantalla. */
+    right: 25px; /* Lo coloca a 25 píxeles del borde derecho de la pantalla. */
+    background-color: rgba(255, 255, 255, 0.7); /* Color de fondo blanco con un 70% de opacidad (semitransparente). */
+    border: none; /* Quita el borde del botón. */
+    border-radius: 50%; /* Redondea las esquinas al 50% para hacerlo un círculo perfecto. */
+    width: 40px; /* Ancho del botón. */
+    height: 40px; /* Alto del botón. */
+    font-size: 16px; /* Tamaño del ícono o texto dentro del botón. */
+    cursor: pointer; /* Cambia el cursor a una manito al pasar por encima, indicando que es clickeable. */
+    color: #4B4B4B; /* Color del ícono o texto del botón. */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Añade una sombra sutil para darle profundidad. */
+    transition: transform 0.2s ease; /* Hace que cualquier cambio de tamaño (transform) sea suave y dure 0.2 segundos. */
+    z-index: 1000; /* Se asegura de que el botón esté siempre por encima de otros elementos de la página. */
+}
+
+/* Estilo para cuando el ratón está sobre el botón de música */
+.boton-musica:hover {
+    transform: scale(1.1); /* Agranda el botón un 10% cuando el cursor está encima. */
+}
+
+/*
+============================================
+ ESTILOS PARA LA NUEVA SECCIÓN DE INFORMACIÓN
+============================================
+*/
+
+.seccion-info {
+    background-color: #ffffff; /* Pone un fondo blanco a esta sección. */
+    position: relative; /* Necesario para efectos de posicionamiento de elementos internos. */
+    padding: 80px 20px; /* Añade 80px de espacio arriba/abajo y 20px a los lados, dentro de la sección. */
+    color: #555; /* Define el color de texto por defecto para esta sección (un gris). */
+}
+
+/* Div superior que muestra un trozo de la imagen de fondo principal */
+.peek-a-boo-fondo {
+    width: 100%; /* Ocupa todo el ancho. */
+    height: 60px; /* Define la altura de esta franja. */
+    background-image: url('images/fondo-boda.jpg'); /* Usa la misma imagen de la portada. */
+    background-size: cover; /* Se asegura que la imagen cubra el área. */
+    /* Muestra una parte específica de la imagen (el centro, pero un 35% desde arriba). */
+    background-position: center 35%; 
+    background-attachment: fixed; /* Fija la imagen de fondo, creando un efecto de parallax al hacer scroll. */
+}
+
+/* Contenedor general para centrar el contenido */
+.seccion-info .contenedor {
+    max-width: 600px; /* Limita el ancho del contenido para que no sea demasiado largo y sea fácil de leer. */
+    margin: 0 auto; /* Centra el contenedor horizontalmente. */
+    text-align: center; /* Centra el texto dentro del contenedor. */
+}
+
+/* Estilo para el bloque de la cita bíblica */
+.seccion-info blockquote {
+    border: none; /* Quita cualquier borde que el navegador ponga por defecto. */
+    margin: 40px 0; /* Añade 40px de espacio arriba y abajo de la cita. */
+    padding: 0; /* Quita cualquier relleno interno. */
+    position: relative; /* Permite posicionar las comillas decorativas de forma precisa. */
+}
+
+/* Estilo para el párrafo de la cita */
+.seccion-info blockquote p {
+    font-family: 'Cormorant Garamond', serif; /* Usa la fuente elegante. */
+    font-size: 1.5rem; /* Tamaño de la letra. */
+    font-style: italic; /* Texto en cursiva. */
+    line-height: 1.6; /* Espacio entre líneas de texto para mejor legibilidad. */
+    margin-bottom: 15px; /* Espacio debajo del párrafo de la cita. */
+}
+
+/* Estilo para el autor de la cita (el pie de la cita) */
+.seccion-info blockquote footer {
+    font-family: 'Lato', sans-serif; /* Usa la fuente principal. */
+    font-style: normal; /* Quita la cursiva que podría heredar. */
+    font-size: 1rem; /* Tamaño de letra normal. */
+    color: #888; /* Color de texto gris claro. */
+}
+
+/* Comillas decorativas gigantes */
+/* El '::before' y '::after' crean elementos "falsos" antes y después del contenido de la cita. */
+.seccion-info blockquote::before,
+.seccion-info blockquote::after {
+    font-family: 'Times New Roman', serif; /* Fuente clásica para las comillas. */
+    font-size: 6rem; /* Tamaño gigante para las comillas. */
+    color: #e0e0e0; /* Color gris muy claro para que no distraigan. */
+    position: absolute; /* Permite posicionarlas libremente. */
+    line-height: 1; /* Ajusta la altura de línea para un mejor control de la posición. */
+}
+
+/* Posición de la comilla de apertura */
+.seccion-info blockquote::before {
+    content: '“'; /* El contenido es una comilla de apertura. */
+    top: -20px; /* La mueve 20px hacia arriba. */
+    left: -20px; /* La mueve 20px hacia la izquierda. */
+}
+
+/* Posición de la comilla de cierre */
+.seccion-info blockquote::after {
+    content: '”'; /* El contenido es una comilla de cierre. */
+    bottom: -30px; /* La mueve 30px hacia abajo. */
+    right: -20px; /* La mueve 20px hacia la derecha. */
+}
+
+/* Párrafo con el texto de la invitación */
+.texto-invitacion {
+    font-size: 1.1rem; /* Tamaño de letra ligeramente más grande que el normal. */
+    line-height: 1.7; /* Espacio entre líneas para facilitar la lectura. */
+    margin-top: 50px; /* Espacio por encima del párrafo. */
+}
+
+/* Decoración de hojas en la parte inferior de la sección */
+.hojas-decoracion-abajo {
+    display: block; /* Se asegura de que la imagen ocupe su propia línea. */
+    margin: 60px auto 0 auto; /* Centra la imagen y le da 60px de espacio por encima. */
+    width: 200px; /* Ancho de la imagen. */
+}
+
+/*
+=====================================
+ ESTILOS PARA LA SECCIÓN DEL CONTADOR
+=====================================
+*/
+.seccion-countdown {
+    background-color: #798A70; /* Fondo de color verde olivo. */
+    color: #ffffff; /* Color de texto blanco para que contraste con el fondo. */
+    padding: 60px 20px; /* Espacio interno de 60px arriba/abajo y 20px a los lados. */
+    text-align: center; /* Centra todo el texto. */
+}
+
+.seccion-countdown .fecha-boda {
+    font-family: 'Cormorant Garamond', serif; /* Fuente elegante. */
+    font-size: 1.5rem; /* Tamaño de letra. */
+    letter-spacing: 3px; /* Espacio entre letras. */
+    text-transform: uppercase; /* Texto en mayúsculas. */
+    margin-bottom: 30px; /* Espacio debajo de la fecha. */
+}
+
+#countdown-timer {
+    display: flex; /* Usa el modo flexible para alinear los elementos del contador. */
+    justify-content: center; /* Centra los elementos (días, horas, etc.) horizontalmente. */
+    gap: 30px; /* Crea un espacio de 30px entre cada elemento del contador. */
+}
+
+.tiempo {
+    display: flex; /* Usa el modo flexible para los números y las etiquetas (ej. "30" y "DÍAS"). */
+    flex-direction: column; /* Apila el número encima de la etiqueta. */
+}
+
+.tiempo span {
+    font-family: 'Lato', sans-serif; /* Fuente principal. */
+    font-size: 3rem; /* Tamaño grande para los números. */
+    font-weight: bold; /* Letra en negrita. */
+    line-height: 1; /* Ajusta la altura de línea. */
+}
+
+.tiempo p {
+    font-size: 0.7rem; /* Tamaño pequeño para las etiquetas (DÍAS, HORAS...). */
+    letter-spacing: 1px; /* Espacio entre letras. */
+    text-transform: uppercase; /* Texto en mayúsculas. */
+    margin-top: 5px; /* Pequeño espacio entre el número y la etiqueta. */
+}
+
+/*
+=======================================
+ ESTILOS PARA LA SECCIÓN DE LA CEREMONIA
+=======================================
+*/
+.seccion-lugar {
+    background-color: #ffffff; /* Fondo blanco. */
+    padding: 80px 20px; /* Espacio interno. */
+    text-align: center; /* Texto centrado. */
+    color: #555; /* Color de texto gris. */
+}
+
+.seccion-lugar .contenedor {
+    max-width: 600px; /* Ancho máximo del contenido. */
+    margin: 0 auto; /* Centrado horizontal. */
+}
+
+.seccion-lugar h2 {
+    font-family: 'Lato', sans-serif; /* Fuente principal. */
+    font-size: 1rem; /* Tamaño de letra. */
+    letter-spacing: 4px; /* Espacio entre letras. */
+    text-transform: uppercase; /* Texto en mayúsculas. */
+    color: #888; /* Color gris claro. */
+}
+
+.icono-anillos {
+    font-size: 2.5rem; /* Tamaño del ícono. */
+    color: #c0c0c0; /* Color plateado. */
+    margin: 20px 0; /* Espacio arriba y abajo del ícono. */
+}
+
+/* Esta regla es para asegurar que un ícono específico de FontAwesome se muestre correctamente. */
+.fa-rings-wedding::before { content: "\f81b"; }
+
+
+.seccion-lugar h3 {
+    font-family: 'Cormorant Garamond', serif; /* Fuente elegante para el nombre del lugar. */
+    font-size: 2.5rem; /* Tamaño de letra grande. */
+    font-weight: 400; /* Grosor de letra normal. */
+    margin: 10px 0; /* Espacio arriba y abajo. */
+    color: #4B4B4B; /* Color gris oscuro. */
+}
+
+.seccion-lugar p {
+    font-family: 'Lato', sans-serif; /* Fuente principal. */
+    font-size: 1.1rem; /* Tamaño de letra. */
+    line-height: 1.5; /* Espacio entre líneas. */
+    margin: 5px 0 20px 0; /* Espacios superior, inferior y laterales. */
+}
+
+.mapa-contenedor {
+    margin-top: 30px; /* Espacio arriba del mapa. */
+    border-radius: 15px; /* Redondea las esquinas del contenedor del mapa. */
+    overflow: hidden; /* Oculta cualquier parte del mapa que se salga de las esquinas redondeadas. */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Añade una sombra sutil. */
+}
+
+.mapa-contenedor iframe {
+    width: 100%; /* El mapa ocupa todo el ancho de su contenedor. */
+    height: 350px; /* Altura del mapa. */
+    border: none; /* Quita el borde del mapa. */
+}
+
+/*
+====================================================
+ CLASES DE UTILIDAD (REUTILIZABLES)
+====================================================
+*/
+/* Para títulos elegantes como 'Código de vestimenta' */
+.titulo-script {
+    font-family: 'Great Vibes', cursive; /* Usa la fuente manuscrita que importamos. */
+    font-size: 3rem; /* Tamaño de letra grande. */
+    font-weight: normal; /* Grosor de letra normal. */
+    color: #BF8E6B; /* Color cobrizo. */
+    margin: 15px 0; /* Espacio arriba y abajo. */
+}
+
+/* Para subtítulos en mayúsculas como 'FORMAL' */
+.subtitulo-mayusculas {
+    font-family: 'Lato', sans-serif; /* Fuente principal. */
+    font-size: 0.9rem; /* Tamaño de letra pequeño. */
+    letter-spacing: 3px; /* Espacio entre letras. */
+    text-transform: uppercase; /* Texto en mayúsculas. */
+    color: #888; /* Color gris claro. */
+    margin: 25px 0; /* Espacio arriba y abajo. */
+}
+
+/*
+====================================================
+ ESTILOS PARA LA SECCIÓN DE CÓDIGO DE VESTIMENTA
+====================================================
+*/
+.seccion-vestimenta {
+    background-color: #f9f8f6; /* Fondo beige claro. */
+    padding: 80px 20px; /* Espacio interno. */
+    position: relative; /* Necesario para posicionar las flores. */
+    overflow: hidden; /* Evita que las flores, si se salen, creen una barra de scroll horizontal. */
+}
+
+/* Contenedor con z-index para que el texto esté sobre las flores */
+.seccion-vestimenta .contenedor {
+    position: relative; /* Necesario para que z-index funcione. */
+    z-index: 2; /* Pone el contenido por delante de las flores (que tendrán z-index: 1). */
+    max-width: 600px; /* Ancho máximo. */
+    margin: 0 auto; /* Centrado horizontal. */
+    text-align: center; /* Texto centrado. */
+}
+
+.flores-vestimenta {
+    position: absolute; /* Posicionamiento exacto. */
+    top: 0; /* Arriba. */
+    left: 0; /* A la izquierda. */
+    width: 250px; /* Ancho de la imagen de flores. */
+    transform: translate(-30%, -20%); /* Mueve la flor para que se salga un poco de la esquina. */
+    opacity: 0.8; /* La hace un poco transparente. */
+    z-index: 1; /* La pone detrás del contenido pero por encima del fondo de la sección. */
+}
+
+.vestimenta-iconos {
+    color: #BF8E6B; /* Color cobrizo. */
+    font-size: 2.5rem; /* Tamaño de los íconos. */
+    margin-bottom: 10px; /* Espacio debajo de los íconos. */
+}
+
+.vestimenta-iconos .fa-person-dress {
+    margin-right: 15px; /* Espacio a la derecha del ícono del vestido, para separarlo del otro. */
+}
+
+.detalles-vestimenta {
+    color: #555; /* Color de texto gris. */
+    font-size: 1.1rem; /* Tamaño de letra. */
+    line-height: 1.7; /* Espacio entre líneas. */
+    max-width: 500px; /* Ancho máximo del párrafo. */
+    margin: 0 auto 30px auto; /* Centra el párrafo y le da espacio abajo. */
+}
+
+.detalles-vestimenta p {
+    margin: 10px 0; /* Espacio arriba y abajo de cada párrafo. */
+}
+
+.paleta-colores {
+    display: flex; /* Usa el modo flexible. */
+    justify-content: center; /* Centra los círculos de color. */
+    align-items: center; /* Alinea los círculos verticalmente. */
+    gap: 15px; /* Espacio entre cada círculo. */
+    margin-top: 10px; /* Espacio arriba de la paleta. */
+}
+
+.color-circulo {
+    display: block; /* Se comporta como un bloque. */
+    width: 40px; /* Ancho del círculo. */
+    height: 40px; /* Alto del círculo. */
+    border-radius: 50%; /* Lo hace un círculo perfecto. */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* Sombra sutil. */
+    transition: transform 0.2s ease; /* Animación suave al agrandarse. */
+}
+
+.color-circulo:hover {
+    transform: scale(1.1); /* Lo agranda un 10% al pasar el ratón por encima. */
+}
+
+/*
+=====================================
+ ESTILOS PARA LA SECCIÓN DE OBSEQUIO
+=====================================
+*/
+.seccion-obsequio {
+    background-color: #ffffff; /* Fondo blanco. */
+    padding: 80px 20px; /* Espacio interno. */
+    text-align: center; /* Texto centrado. */
+}
+
+.seccion-obsequio .contenedor {
+    max-width: 600px; /* Ancho máximo. */
+    margin: 0 auto; /* Centrado horizontal. */
+}
+
+/* Le damos un color específico al título en esta sección */
+.seccion-obsequio .subtitulo-boda {
+    color: #798A70; /* Color verde olivo. */
+    margin-bottom: 40px; /* Espacio inferior. */
+}
+
+.obsequio-icono {
+    color: #798A70; /* Color verde olivo. */
+    font-size: 3rem; /* Tamaño grande para el ícono. */
+    margin-bottom: 40px; /* Espacio inferior. */
+}
+
+.texto-obsequio {
+    color: #555; /* Color de texto gris. */
+    font-family: 'Lato', sans-serif; /* Fuente principal. */
+    font-size: 1.2rem; /* Tamaño de letra. */
+    line-height: 1.8; /* Espacio entre líneas. */
+    max-width: 550px; /* Ancho máximo del texto. */
+    margin: 0 auto; /* Centrado horizontal. */
+}
+
+/*
+====================================================
+ ESTILOS PARA LA SECCIÓN DE CONFIRMAR ASISTENCIA
+====================================================
+*/
+.seccion-confirmar {
+    background-color: #f9f8f6; /* Fondo beige claro. */
+    padding: 80px 20px; /* Espacio interno. */
+    text-align: center; /* Texto centrado. */
+}
+
+.seccion-confirmar .contenedor {
+    max-width: 600px; /* Ancho máximo. */
+    margin: 0 auto; /* Centrado horizontal. */
+}
+
+.texto-confirmar {
+    color: #555; /* Color de texto gris. */
+    font-size: 1.1rem; /* Tamaño de letra. */
+    line-height: 1.7; /* Espacio entre líneas. */
+    max-width: 500px; /* Ancho máximo. */
+    margin: 10px auto 40px auto; /* Espacio arriba y abajo. */
+}
+
+.boton-principal {
+    display: inline-block; /* Permite darle ancho, alto y padding, pero se alinea con el texto. */
+    background-color: #798A70; /* Fondo verde olivo. */
+    color: #ffffff; /* Texto blanco. */
+    padding: 15px 40px; /* Relleno interno (15px arriba/abajo, 40px a los lados). */
+    border-radius: 50px; /* Redondea las esquinas para que parezca una píldora. */
+    text-decoration: none; /* Quita el subrayado de los enlaces. */
+    font-family: 'Lato', sans-serif; /* Fuente principal. */
+    font-size: 1rem; /* Tamaño de letra. */
+    font-weight: bold; /* Texto en negrita. */
+    letter-spacing: 2px; /* Espacio entre letras. */
+    text-transform: uppercase; /* Texto en mayúsculas. */
+    border: none; /* Sin borde. */
+    cursor: pointer; /* Cursor de mano. */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra sutil. */
+    transition: all 0.3s ease; /* Anima todos los cambios (color, sombra, posición) suavemente. */
+}
+
+.boton-principal:hover {
+    background-color: #637158; /* Cambia a un verde un poco más oscuro al pasar el ratón. */
+    transform: translateY(-3px); /* Mueve el botón 3 píxeles hacia arriba. */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15); /* Aumenta la sombra para dar un efecto de "levantado". */
+}
+
+/*
+=====================================
+ ESTILOS PARA EL PIE DE PÁGINA (FOOTER)
+=====================================
+*/
+.pie-pagina {
+    position: relative; /* Necesario para la capa de color superpuesta. */
+    padding: 120px 20px; /* Mucho espacio interno para que la foto de fondo se vea bien. */
+    text-align: center; /* Texto centrado. */
+    color: #ffffff; /* Color de texto blanco. */
+    
+    /* Pone una imagen de fondo con una capa oscura semitransparente por encima para que el texto blanco resalte. */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/foto-footer.jpg');
+    background-size: cover; /* La imagen cubre toda la sección. */
+    background-position: center; /* La imagen está centrada. */
+    background-attachment: fixed; /* Efecto parallax: el fondo se queda quieto al hacer scroll. */
+}
+
+.pie-pagina p {
+    margin: 5px 0; /* Pequeño espacio arriba y abajo del texto. */
+    font-family: 'Lato', sans-serif; /* Fuente principal. */
+    position: relative; /* Necesario para que z-index funcione. */
+    z-index: 2; /* Asegura que el texto esté por encima de la capa de color. */
+}
+
+/* Ajustamos el estilo de los nombres para que también sean blancos */
+.pie-pagina .nombres-novios-entrada {
+    font-size: 2.5rem; /* Tamaño de letra. */
+    margin-bottom: 20px; /* Espacio inferior. */
+    color: #ffffff; /* Color de texto blanco. */
+}
+
+/* Media Query para ajustar tamaños en pantallas más pequeñas (móviles) */
+/* Estas reglas solo se aplican si el ancho de la pantalla es de 600 píxeles o menos. */
+@media (max-width: 600px) {
+    .hojas-decoracion {
+        width: 200px; /* Reduce el tamaño de las hojas. */
+    }
+    .nombres-novios {
+        font-size: 3rem; /* Reduce el tamaño de la fuente en móviles */
+        max-width: 280px;
+    }
+
+    .nombres-novios .ampersand {
+        font-size: 2.5rem;
+    }
+
+    .ampersand {
+        font-size: 2.5rem; /* Reduce el tamaño del '&'. */
+    }
+    .seccion-info {
+        padding: 60px 20px; /* Reduce el espacio interno en la sección de info. */
+    }
+
+    .seccion-info blockquote::before {
+        left: -10px; /* Acerca la comilla de apertura al texto. */
+    }
+
+    .seccion-info blockquote::after {
+        right: -10px; /* Acerca la comilla de cierre al texto. */
+    }
+
+    .seccion-info blockquote p {
+        font-size: 1.3rem; /* Reduce el tamaño del texto de la cita. */
+    }
+    .tiempo span {
+        font-size: 2rem; /* Reduce el tamaño de los números del contador. */
+    }
+    #countdown-timer {
+        gap: 20px; /* Reduce el espacio entre los elementos del contador. */
+    }
+    .seccion-lugar h3 {
+        font-size: 2rem; /* Reduce el tamaño del nombre del lugar. */
+    }
+
+    .nombres-novios-entrada {
+        font-size: 4rem; /* Ajusta el tamaño de los nombres en la pantalla de entrada para móviles. */
+    }
+    .flores-entrada {
+        width: 180px; /* Reduce el tamaño de las flores en la pantalla de entrada. */
+    }
+    .titulo-script {
+        font-size: 2.5rem; /* Reduce el tamaño de los títulos con fuente manuscrita. */
+    }
+    .flores-vestimenta {
+        width: 180px; /* Reduce el tamaño de las flores en la sección de vestimenta. */
+    }
+    .color-circulo {
+        width: 35px; /* Reduce el tamaño de los círculos de color. */
+        height: 35px;
+    }
+}
