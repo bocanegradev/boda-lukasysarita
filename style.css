@@ -15,6 +15,11 @@ body, html {
     background-color: #f4f4f4; /* Pone un color de fondo gris claro a toda la página. */
 }
 
+/* Clase para evitar el scroll en el body */
+body.no-scroll {
+    overflow: hidden;
+}
+
 /*
 =====================================
  ESTILOS PARA LA PANTALLA DE BIENVENIDA
@@ -44,8 +49,8 @@ body, html {
     position: absolute; /* Posicionamiento exacto. */
     top: 0; /* Arriba. */
     right: 0; /* A la derecha. */
-    width: 280px !important; /* Ancho de la imagen de flores. '!important' fuerza a que se aplique este ancho. */
-    transform: translate(14%, -18%); /* Mueve la imagen para que se salga un poco de la esquina. */
+    width: 300px !important; /* Ancho de la imagen de flores. '!important' fuerza a que se aplique este ancho. */
+    transform: translate(14%, -16%); /* Mueve la imagen para que se salga un poco de la esquina. */
 }
 
 .contenido-entrada {
@@ -56,9 +61,9 @@ body, html {
     /*font-family: "kulachat"; /* Fuente elegante. */
     /*font-style: normal; /* Estilo de fuente normal (no cursiva). */
     font-family: "Forum", serif;
-    font-size: 2.5rem !important; /* Tamaño de letra grande. */
-    font-weight: 550 !important; /* Grosor de letra medio. */
-    letter-spacing: 3px; /* Aumenta el espacio entre letras en 2 píxeles */
+    font-size: 2.5rem !important; /* Tamaño de letra. */
+    font-weight: 550 !important; /* Grosor de letra. */
+    letter-spacing: 2px; /* Aumenta el espacio entre letras en 2 píxeles */
     color: #000000; /* Color de texto negro. */
     margin: 35px 0 15px 0; /* Espacio arriba y abajo. */
 }
@@ -66,15 +71,10 @@ body, html {
 .sobre-contenedor {
     position: relative; /* Necesario para efectos de posicionamiento. */
     cursor: pointer; /* El cursor se convierte en una mano. */
-    transition: transform 0.5s ease; /* Animación suave al cambiar de tamaño. */
-}
-
-.sobre-contenedor:hover {
-    transform: scale(1.1); /* Agranda el sobre un 10% al pasar el ratón por encima. */
 }
 
 .imagen-sobre {
-    width: 200px; /* Ancho de la imagen del sobre. */
+    width: 180px; /* Ancho de la imagen del sobre. */
 }
 
 .texto-sobre {
@@ -87,29 +87,28 @@ body, html {
     font-size: 0.05rem !important; /* Tamaño de texto pequeño. */
 }
 
-.texto-sobre i {
-    font-size: 1rem; /* Tamaño del ícono (si lo hay). */
-    margin-bottom: 8px; /* Espacio debajo del ícono. */
-}
-
 .texto-sobre p {
     font-family: 'Lora', sans-serif; /* Fuente principal. */
     font-size: 0.9rem; /* Tamaño de letra pequeño. */
-    margin: 0; /* Sin márgenes. */
+    margin-bottom: 8px; /* Espacio debajo del ícono. */
+}
+
+.texto-sobre i {
+    font-size: 0.8rem; /* Tamaño del ícono (si lo hay). */
 }
 
 .texto-reserva {
+    font-family: 'Lato', sans-serif; /* O la fuente que estés usando para párrafos */
     position: absolute; /* Permite posicionarlo de forma precisa */
     bottom: 110px;       /* Lo sitúa a 60px del borde inferior */
     left: 50%;          /* Lo mueve al centro horizontal */
     transform: translateX(-50%); /* Centra el texto perfectamente */
-    width: 90%;         /* Ocupa el 90% del ancho para evitar que toque los bordes */
-    padding: 10px;     /* Añade un poco de espacio interno */
+    width: 80%;         /* Ocupa el 80% del ancho para evitar que toque los bordes */
+    padding: 8px;     /* Añade un poco de espacio interno */
     background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
     border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    font-family: 'Lato', sans-serif; /* O la fuente que estés usando para párrafos */
-    font-size: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+    font-size: 1.02rem;
     color: #2d2d2d; /* Un gris suave para que no compita con el título */
     text-align: center;
     line-height: 1.5;

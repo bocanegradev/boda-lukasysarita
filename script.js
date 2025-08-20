@@ -14,12 +14,12 @@ window.addEventListener('load', function() {
     botonAbrir.addEventListener('click', function() {
         // Inicia la música
         cancion.play();
-        
         // Oculta la pantalla de entrada con una transición suave
         pantallaEntrada.classList.add('oculto');
-        
         // Asegúrate de que el ícono de música muestre 'pausa'
         actualizarIconoMusica();
+        // Elimina la clase 'no-scroll' del body para activar el scroll
+        document.body.classList.remove('no-scroll');
     });
     
     
