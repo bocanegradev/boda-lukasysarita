@@ -55,6 +55,14 @@ body.no-scroll {
 
 .contenido-entrada {
     text-align: center; /* Centra el texto. */
+    transform: translateY(-30px); /* Mueve todo el contenido 30px hacia arriba */
+}
+
+.subtitulo-boda-entrada {
+    font-size: 1rem; /* Define el tamaño del texto. */
+    letter-spacing: 4px; /* Añade espacio entre cada letra. */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas. */
+    color: #000000; /* Le da un color negro. */
 }
 
 .nombres-novios-entrada {
@@ -99,18 +107,15 @@ body.no-scroll {
 
 .texto-reserva {
     font-family: 'Lato', sans-serif; /* O la fuente que estés usando para párrafos */
-    position: absolute; /* Permite posicionarlo de forma precisa */
-    bottom: 110px;       /* Lo sitúa a 60px del borde inferior */
-    left: 50%;          /* Lo mueve al centro horizontal */
-    transform: translateX(-50%); /* Centra el texto perfectamente */
-    width: 80%;         /* Ocupa el 80% del ancho para evitar que toque los bordes */
+    margin: 25px auto 0;
+    width: 70%;         /* Ocupa el 70% del ancho para evitar que toque los bordes */
+    max-width: 600px;
     padding: 8px;     /* Añade un poco de espacio interno */
     background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra sutil */
     font-size: 1.02rem;
     color: #2d2d2d; /* Un gris suave para que no compita con el título */
-    text-align: center;
     line-height: 1.5;
 }
 
