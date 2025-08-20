@@ -59,6 +59,7 @@ body.no-scroll {
 }
 
 .subtitulo-boda-entrada {
+    font-family: 'Lato', serif;
     font-size: 1rem; /* Define el tamaño del texto. */
     letter-spacing: 4px; /* Añade espacio entre cada letra. */
     text-transform: uppercase; /* Convierte el texto a mayúsculas. */
