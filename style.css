@@ -83,7 +83,7 @@ body.no-scroll {
 }
 
 .imagen-sobre {
-    width: 180px; /* Ancho de la imagen del sobre. */
+    width: 200px; /* Ancho de la imagen del sobre. */
 }
 
 .texto-sobre {
@@ -108,7 +108,7 @@ body.no-scroll {
 
 .texto-reserva {
     font-family: 'Lato', sans-serif; /* O la fuente que estés usando para párrafos */
-    margin: 25px auto 0;
+    margin: 40px auto 0;
     width: 70%;         /* Ocupa el 70% del ancho para evitar que toque los bordes */
     max-width: 600px;
     padding: 8px;     /* Añade un poco de espacio interno */
@@ -126,7 +126,7 @@ body.no-scroll {
     width: 100%; /* Hace que esta sección ocupe el 100% del ancho de la pantalla. */
     
     /* Pone una imagen de fondo. 'linear-gradient' añade un degradado blanco que se desvanece para que el texto se lea mejor. */
-    background-image: linear-gradient(to bottom, rgba(249, 248, 246, 1), rgba(255, 255, 255, 0) 50%), url('images/fondo-boda-4.jpg');
+    background-image: linear-gradient(to bottom, rgba(249, 248, 246, 1), rgba(255, 255, 255, 0) 60%), url('images/fondo-boda-4.jpg');
     /*background-image: url('images/fondo-boda-3.jpg');*/
     background-size: cover; /* Asegura que la imagen de fondo cubra toda la sección sin deformarse. */
     background-position: center; /* Centra la imagen de fondo. */
@@ -149,7 +149,7 @@ body.no-scroll {
 
 /* Contenedor para centrar los textos */
 .contenedor-texto {
-    margin-top: -550px; /* Añade un margen en la parte de arriba para empujar el texto hacia abajo. */
+    margin-top: -400px; /* Añade un margen en la parte de arriba para empujar el texto hacia abajo. */
 }
 
 /* Estilo para "NUESTRA BODA" */
@@ -166,7 +166,7 @@ body.no-scroll {
     font-size: 3.5rem !important; /* Hace el texto de los nombres muy grande. */
     font-weight: 600; /* Define el grosor de la letra (400 es normal). */
     letter-spacing: 2px; /* Aumenta el espacio entre letras en 2 píxeles */
-    margin: 0;
+    margin: 10px;
     line-height: 1; /* Aumentamos un poco la altura de línea para dar espacio */
     color: #000000; /* Le da un color negro. */
 
