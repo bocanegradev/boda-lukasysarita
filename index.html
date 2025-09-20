@@ -19,6 +19,7 @@
 
 <body class="no-scroll">
     <div class="site-wrapper">
+
         <div id="pantalla-entrada">
             <img src="images/flores-decorativas.png" alt="Flores decorativas" class="flores-entrada">
             <div class="contenido-entrada">
@@ -39,11 +40,6 @@
         <audio id="cancion-boda" src="audio/cancion-boda.mp3" loop></audio>
 
         <header class="hero-section">
-            
-            <!--
-            <img src="images/flowers-top-2.png" alt="Decoración de hojas" class="hojas-decoracion">
-            -->
-
             <button id="control-musica" class="boton-musica">
                 <i class="fas fa-pause"></i>
             </button>
@@ -56,28 +52,22 @@
                     <span class="nombre-dos">SARITA</span>
                 </h1>
             </div>
-
         </header>
 
          <main class="seccion seccion-info">
-
             <div class="contenedor">
                 <blockquote>
                     <p>"Mejores son dos que uno; porque tienen mejor paga de su trabajo. Porque si cayeren, el uno levantará a su compañero;..."</p>
                     <footer>Ec. 4:9-10</footer>
                 </blockquote>
-
-                <p class="texto-invitacion">
-                    <span id="nombre-invitado-cuerpo">Jairo, Anita y Josué Bocanegra:</span> Te invitamos a compartir con nosotros este día tan especial, en el que celebraremos el amor que Él ha sembrado en nuestros corazones.
-                </p>
-                
-                <img src="images/flores_versiculo.png" alt="Decoración de hojas" class="hojas-decoracion-abajo">
             </div>
+            <img src="images/flores_versiculo.png" alt="Decoración de hojas" class="hojas-decoracion-abajo">
         </main>
 
         <section class="seccion seccion-countdown">
             <div class="contenedor">
-                <p class="fecha-boda">SÁBADO 18 DICIEMBRE</p>
+                <h2 class="titulo-seccion">Sábado 22 Noviembre</h2>
+                <p class="fecha-boda" id="texto-faltan">Faltan...</p>
                 <div id="countdown-timer">
                     <div class="tiempo">
                         <span id="dias">00</span>
@@ -89,26 +79,34 @@
                     </div>
                     <div class="tiempo">
                         <span id="minutos">00</span>
-                        <p>MINS</p>
+                        <p>MIN</p>
                     </div>
                     <div class="tiempo">
                         <span id="segundos">00</span>
-                        <p>SEGS</p>
+                        <p>SEG</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="seccion seccion-texto-invitacion">
+            <div class="contenedor">
+                <p class="texto-invitacion">
+                    <span id="nombre-invitado-cuerpo">Jairo, Anita y Josué Bocanegra:</span> Te invitamos a compartir con nosotros este día tan especial, en el que celebraremos el amor que Él ha sembrado en nuestros corazones.
+                </p>
+            </div>
+        </section>
+
         <section class="seccion seccion-lugar">
             <div class="contenedor">
-                <h2 class="titulo-seccion">Ceremonia y Recepción</h2>
-                <i class="fa-solid fa-rings-wedding icono-anillos"></i>
-                <h3 class="subtitulo-seccion">ENTREBOSQUES DE ARVÍ</h3>
-                <p class="texto-seccion">Unnamed Rd, Guarne, Antioquia</p>
-                <p class="texto-seccion">Hora: 4:00 pm</p>
+                <h2 class="titulo-seccion">Ceremonia</h2>
+                <p class="texto-seccion">Iglesia La Biblia Dice...</p>
+                <p class="texto-seccion">Calle 116 # 70C - 58, Bogotá</p>
+                <p class="texto-seccion">Hora: 3:00 p.m.</p>
 
                 <div class="mapa-contenedor">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.816991191316!2d-75.46755482435529!3d6.288258026131494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e441f7158f948c9%3A0xe54c1a5515797825!2sEntrebosques%20de%20Arv%C3%AD!5e0!3m2!1ses-419!2sco!4v1721404177587!5m2!1ses-419!2sco" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.405352252559!2d-74.07557722430823!3d4.699430795275572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9ad6e24234a9%3A0xf1708fcfaea48545!2sIglesia%20La%20Biblia%20Dice!5e0!3m2!1ses-419!2sco!4v1758336946706!5m2!1ses-419!2sco" 
                         width="600" 
                         height="450" 
                         style="border:0;" 
@@ -117,6 +115,24 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
+            </div>
+        </section>
+
+        <section class="seccion seccion-parqueaderos">
+            <div class="contenedor">
+                <h2 class="titulo-seccion">Parqueaderos</h2>
+                <p class="texto-seccion">
+                    Por seguridad, si llevas automóvil, te recomendamos llegar con anticipación para encontrar lugar en los parqueaderos cercanos:
+                </p>
+                <iframe
+                    src="https://www.google.com/maps/d/embed?mid=10LlTTV_1XnVEeUGx7wGH4RUjIBRa3Zk&ehbc=2E312F&noprof=1"
+                        width="600" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </section>
 
