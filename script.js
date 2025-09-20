@@ -49,7 +49,7 @@ window.addEventListener('load', function() {
     // --- Lógica del CONTADOR REGRESIVO ---
     
     // ¡IMPORTANTE! Coloca la fecha de tu boda aquí.
-    const fechaBoda = new Date("Dec 18, 2025 16:00:00").getTime();
+    const fechaBoda = new Date("Nov 22, 2025 15:00:00").getTime();
 
     const countdownInterval = setInterval(function() {
         const ahora = new Date().getTime();
@@ -67,7 +67,8 @@ window.addEventListener('load', function() {
 
         if (distancia < 0) {
             clearInterval(countdownInterval);
-            document.getElementById("countdown-timer").innerHTML = "<p class='fecha-boda'>¡LLEGÓ EL GRAN DÍA!</p>";
+            document.getElementById("countdown-timer").innerHTML = "<p class='fecha-boda'>¡LLEGÓ EL MOMENTO!</p>";
+            document.getElementById("texto-faltan").innerHTML = "";
         }
     }, 1000);
 });
