@@ -1,7 +1,3 @@
-/* ==========================================================================
-   1. CONFIGURACIÓN GENERAL E IMPORTACIONES
-   ========================================================================== */
-
 /* Importar fuentes de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?&family=Forum&family=Cormorant+Garamond:wght@400;700&family=Lato:wght@300&family=Lora&display=swap');
 
@@ -33,9 +29,8 @@ body.no-scroll {
     overflow: hidden;
 }
 
-
 /* ==========================================================================
-   2. PANTALLA DE BIENVENIDA
+   PANTALLA DE BIENVENIDA
    ========================================================================== */
 
 #pantalla-entrada {
@@ -61,8 +56,8 @@ body.no-scroll {
     position: absolute;
     top: 0;
     right: 0;
-    width: 300px;
-    transform: translate(14%, -16%);
+    width: 400px !important;
+    transform: translate(15%, -16%);
 }
 
 .contenido-entrada {
@@ -129,9 +124,8 @@ body.no-scroll {
     line-height: 1.5;
 }
 
-
 /* ==========================================================================
-   3. HERO SECTION (PORTADA PRINCIPAL)
+   HERO (PORTADA)
    ========================================================================== */
 
 .hero-section {
@@ -148,12 +142,6 @@ body.no-scroll {
     justify-content: center;
     text-align: center;
     position: relative;
-}
-
-.hojas-decoracion {
-    position: absolute;
-    top: -20px;
-    width: 450px;
 }
 
 .contenedor-texto {
@@ -216,9 +204,8 @@ body.no-scroll {
     transform: scale(1.1);
 }
 
-
 /* ==========================================================================
-   4. ESTILOS BASE PARA SECCIONES
+   ESTILOS BASE PARA SECCIONES
    ========================================================================== */
 
 .seccion {
@@ -258,7 +245,7 @@ body.no-scroll {
     line-height: 1.8;
     color: #555;
     max-width: 550px;
-    margin: 15px auto;
+    margin: 0;
 }
 
 .icono-seccion {
@@ -268,17 +255,15 @@ body.no-scroll {
 
 
 /* ==========================================================================
-   5. ESTILOS INDIVIDUALES POR SECCIÓN
+   SECCIÓN 1: VERSÍCULO
    ========================================================================== */
-
-/* --- 5.1 SECCIÓN INFO (VERSÍCULO) --- */
-.seccion-info {
+.seccion-versiculo {
     background-color: #ffffff;
-    padding-bottom: 140px; /* Espacio para la imagen decorativa */
+    padding-bottom: 100px; /* Espacio para la imagen decorativa */
     font-size: 1.3rem;
 }
 
-.hojas-decoracion-abajo {
+.hojas-versiculo {
     position: absolute;
     bottom: -80px;
     left: -20px;
@@ -287,7 +272,9 @@ body.no-scroll {
     z-index: 1;
 }
 
-/* --- 5.2 SECCIÓN COUNTDOWN --- */
+/* ==========================================================================
+   SECCIÓN 2: COUNTDOWN
+   ========================================================================== */
 .seccion-countdown {
     background-color: #3c624c;
     color: #ffffff;
@@ -327,7 +314,9 @@ body.no-scroll {
     margin-top: 5px;
 }
 
-/* --- 5.3 SECCIÓN TEXTO INVITACIÓN --- */
+/* ==========================================================================
+   SECCIÓN 3: TEXTO DE INVITACIÓN
+   ========================================================================== */
 .seccion-texto-invitacion {
     background-color: #ececea;
 }
@@ -339,9 +328,31 @@ body.no-scroll {
     padding: 0;
 }
 
-/* --- 5.4 SECCIÓN LUGAR --- */
+#nombre-invitado-cuerpo {
+    font-weight: 600;
+    color: #3c624c;
+}
+
+/* ==========================================================================
+   SECCIÓN 3: FOTO0
+   ========================================================================== */
+.seccion-foto {
+    padding: 0; /* Eliminamos el padding para que la foto ocupe todo el espacio */
+    background-color: #ffffff; /* Mantenemos el fondo por si la imagen no carga */
+}
+
+.seccion-foto .foto-0 {
+    width: 100%; /* La imagen ocupa el 100% del ancho del site-wrapper */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina cualquier espacio extra debajo de la imagen */
+}
+
+/* ==========================================================================
+   SECCIÓN 4: SECCIÓN LUGAR
+   ========================================================================== */
 .seccion-lugar {
     background-color: #ffffff;
+    background: linear-gradient(to top, rgb(236, 236, 234), transparent 10%);
 }
 
 .seccion-lugar .titulo-seccion {
@@ -365,7 +376,9 @@ body.no-scroll {
     border: none;
 }
 
-/* --- 5.5 SECCIÓN PARQUEADEROS --- */
+/* ==========================================================================
+   SECCIÓN 5: SECCIÓN PARQUEADEROS
+   ========================================================================== */
 .seccion-parqueaderos {
     background-color: #ececea;
 }
@@ -378,29 +391,15 @@ body.no-scroll {
     color: #BF8E6B;
 }
 
-/* --- 5.6 SECCIÓN VESTIMENTA --- */
+/* ==========================================================================
+   SECCIÓN 6: SECCIÓN VESTIMENTA
+   ========================================================================== */
 .seccion-vestimenta {
     background-color: #ffffff;
 }
 
-.flores-vestimenta {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 250px;
-    transform: translate(-30%, -20%);
-    opacity: 0.8;
-    z-index: 1;
-}
-
-.vestimenta-iconos {
-    color: #BF8E6B;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.vestimenta-iconos .fa-person-dress {
-    margin-right: 15px;
+.seccion-vestimenta .subtitulo-seccion {
+    font-weight: 600;
 }
 
 .paleta-colores {
@@ -408,7 +407,7 @@ body.no-scroll {
     justify-content: center;
     align-items: center;
     gap: 15px;
-    margin-top: 10px;
+    margin-top: -15px;
 }
 
 .color-circulo {
@@ -424,7 +423,9 @@ body.no-scroll {
     transform: scale(1.1);
 }
 
-/* --- 5.7 SECCIÓN OBSEQUIO --- */
+/* ==========================================================================
+   SECCIÓN 7: SECCIÓN OBSEQUIO
+   ========================================================================== */
 .seccion-obsequio {
     background-color: #ececea;
 }
@@ -433,13 +434,9 @@ body.no-scroll {
     color: #798A70;
 }
 
-.obsequio-icono {
-    color: #798A70;
-    font-size: 3rem;
-    margin: 20px 0;
-}
-
-/* --- 5.8 SECCIÓN CONFIRMAR ASISTENCIA --- */
+/* ==========================================================================
+   SECCIÓN 7: SECCIÓN CONFIRMAR ASISTENCIA
+   ========================================================================== */
 .seccion-confirmar {
     background-color: #ffffff;
 }
@@ -471,7 +468,7 @@ body.no-scroll {
 
 
 /* ==========================================================================
-   6. PIE DE PÁGINA (FOOTER)
+   FOOTER
    ========================================================================== */
 
 .pie-pagina {
@@ -501,7 +498,7 @@ body.no-scroll {
 
 
 /* ==========================================================================
-   7. ESTILOS RESPONSIVE (MEDIA QUERIES)
+   ESTILOS RESPONSIVE (MEDIA QUERIES)
    ========================================================================== */
 
 @media (max-width: 600px) {
