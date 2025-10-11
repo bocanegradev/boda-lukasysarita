@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirigiendo...</title>
+    <script>
+      // Obtiene la ruta solicitada (ej: "/boda/usnF2")
+      const path = window.location.pathname;
+
+      // Extrae el código de invitado. Asume que la URL es /nombre-repo/codigo
+      const segments = path.split('/');
+      const guestCode = segments.pop(); // Obtiene el último segmento
+
+      // Redirige a index.html con el código como parámetro de consulta
+      window.location.replace(
+        '/' + segments.join('/') + '/?guest=' + guestCode
+      );
+    </script>
+  </head>
+  <body>
+    <p>text</p>
+  </body>
+</html>
