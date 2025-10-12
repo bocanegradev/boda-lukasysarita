@@ -145,18 +145,18 @@ window.addEventListener('load', function() {
 
         // Lista de tus fotos en la carpeta /galeria
         const nombresFotos = [
-            '1.JPG'
-            ,'2.JPG'
-            ,'3.JPG'
-            ,'4.JPG'
-            ,'5.JPG'
-            ,'6.JPG'
-            ,'7.JPG'
-            ,'8.jpg'
-            ,'9.jpg'
-            ,'10.jpg'
-            ,'11.jpg'
-            ,'12.jpg'
+            '1_c.jpg'
+            ,'2_c.jpg'
+            ,'3_c.jpg'
+            ,'4_c.jpg'
+            ,'5_c.jpg'
+            ,'6_c.jpg'
+            ,'7_c.jpg'
+            ,'8_c.jpg'
+            ,'9_c.jpg'
+            ,'10_c.jpg'
+            ,'11_c.jpg'
+            ,'12_c.jpg'
         ];
 
         // Duplicamos la lista de fotos para crear el efecto de bucle infinito

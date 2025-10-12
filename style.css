@@ -135,7 +135,7 @@ body.no-scroll {
     background-image: 
         linear-gradient(to bottom, rgba(249, 248, 246, 1), transparent 50%), 
         linear-gradient(to top, #ffffff, transparent 10%), 
-        url('images/fondo-boda-5-cut.jpg');
+        url('images/fondo-boda-5-cut_c.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
