@@ -1,43 +1,57 @@
 // Espera a que todo el contenido de la página se cargue
 window.addEventListener('load', function() {
-
-    // --- LÓGICA DE PERSONALIZACIÓN ---
     function personalizarInvitacion() {
-        // 1. Obtener el código desde los parámetros de la URL
+        // 1. Obtener el código alfanumérico desde los parámetros de la URL
         const params = new URLSearchParams(window.location.search);
         const codigoInvitado = params.get('g');
-
         // 2. Buscar al invitado en la lista
         const invitado = listaInvitados[codigoInvitado];
-
         // 3. Si el invitado no existe o no hay código, mostrar error y detener la carga
         if (!invitado) {
-            const siteWrapper = document.querySelector('.site-wrapper');
+            const siteWrapper = document.querySelector('.site-wrapper'); // Selecciona el contenedor principal
             if (siteWrapper) siteWrapper.style.display = 'none'; // Oculta todo el contenido
-
             // Muestra un mensaje de error simple
             document.body.innerHTML = '<p style="text-align:center; font-family: sans-serif; margin-top: 40px; color: #333;">Invitación no encontrada :(</p>';
             document.body.style.backgroundColor = '#f9f8f6';
             return; // Detiene la ejecución del resto del script
         }
-
         // 4. Si el invitado existe, actualizar los elementos en el HTML
         const nombreInvitadoSpan = document.getElementById('nombre-invitado');
-        const numeroPuestosSpan = document.getElementById('numero-puestos');
-        const nombreInvitadoCuerpoSpan = document.getElementById('nombre-invitado-cuerpo');
+        const textoReservaCompleto = document.querySelector('.texto-reserva'); // Seleccionamos el párrafo completo
+        const textoInvitacionP = document.querySelector('.seccion-texto-invitacion .texto-invitacion'); // Seleccionamos el párrafo
+        const textoConfirmacionP = document.getElementById('texto-confirmacion');
+        const textoObsequioP = document.getElementById('texto-obsequio');
         const botonConfirmarLukas = document.querySelector('.boton-confirmar-lukas');
         const botonConfirmarSarita = document.querySelector('.boton-confirmar-sarita');
 
-        if (nombreInvitadoSpan) nombreInvitadoSpan.innerText = invitado.nombre;
-        if (numeroPuestosSpan) numeroPuestosSpan.innerText = invitado.puestos;
-        if (nombreInvitadoCuerpoSpan) nombreInvitadoCuerpoSpan.innerText = invitado.nombre + ":";
-        
-        // Opcional: Personalizar el link de confirmación de WhatsApp
+        // Determinar si es singular o plural
+        const esSingular = (invitado.puestos === 1);
+        // --- Personalizar textos ---
+        // Texto de la pantalla de entrada
+        if (textoReservaCompleto) {
+            const texto = esSingular ? textosPersonalizados.reserva.singular : textosPersonalizados.reserva.plural.replace('{puestos}', invitado.puestos);
+            textoReservaCompleto.innerHTML = `<b>${invitado.nombre}</b>, ${texto}`;
+        }
+        // Texto de la sección de invitación
+        if (textoInvitacionP) {
+            const texto = esSingular ? textosPersonalizados.invitacion.singular : textosPersonalizados.invitacion.plural;
+            textoInvitacionP.innerHTML = `<b>${invitado.nombre}:</b> ${texto}`;
+        }
+        // Texto de la sección de obsequio
+        if (textoObsequioP) {
+            const texto = esSingular ? textosPersonalizados.obsequio.singular : textosPersonalizados.obsequio.plural;
+            textoObsequioP.innerHTML = `${texto}`;
+        }
+        // Texto de la sección de confirmación
+        if (textoConfirmacionP) {
+            const texto = esSingular ? textosPersonalizados.confirmacion.singular : textosPersonalizados.confirmacion.plural;
+            textoConfirmacionP.innerHTML = `${texto}`;
+        }
+        // --- Personalizar botones de WhatsApp ---
         if (botonConfirmarLukas) {
             const mensajeWhatsApp = `¡Hola Lukas! Soy ${invitado.nombre}. Confirmo la asistencia (${invitado.puestos} puestos) a su boda. ¡Nos vemos allí!`;
             botonConfirmarLukas.href = `https://wa.me/573506854921?text=${encodeURIComponent(mensajeWhatsApp)}`;
         }
-
         if (botonConfirmarSarita) {
             const mensajeWhatsApp = `¡Hola Sarita! Soy ${invitado.nombre}. Confirmo la asistencia (${invitado.puestos} puestos) a su boda. ¡Nos vemos allí!`;
             botonConfirmarSarita.href = `https://wa.me/573506854921?text=${encodeURIComponent(mensajeWhatsApp)}`;

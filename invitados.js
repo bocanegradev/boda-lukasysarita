@@ -7,7 +7,6 @@ const listaInvitados = {
     ,'6lD': {nombre: 'Andrés Bernal', puestos: 1}
     ,'Put': {nombre: 'Daniel Suárez', puestos: 1}
     ,'gVO': {nombre: 'Rubén Obando', puestos: 1}
-    ,'SNG': {nombre: 'Juanda Jiménez', puestos: 1}
     ,'sJr': {nombre: 'Andrés Báez', puestos: 1}
     ,'A8T': {nombre: 'Stepha', puestos: 1}
     ,'nPh': {nombre: 'Diego Vásquez', puestos: 1}
@@ -74,7 +73,6 @@ const listaInvitados = {
     ,'7ON': {nombre: 'Ricardo y Olgui Walteros', puestos: 2}
     ,'aLE': {nombre: 'Sofía Walteros', puestos: 1}
     ,'eJv': {nombre: 'Natalia Walteros', puestos: 1}
-    ,'I1J': {nombre: 'Samuel Sur y Cindy Sur', puestos: 2}
     ,'znF': {nombre: 'Santi Villamil', puestos: 1}
     ,'BSL': {nombre: 'Sebas y Nata Perilla', puestos: 2}
     ,'vGm': {nombre: 'Sergio Hidalgo', puestos: 1}
@@ -161,4 +159,23 @@ const listaInvitados = {
     ,'OAQ': {nombre: 'Jhon Castillo', puestos: 1}
     ,'kI4': {nombre: 'Paula Solano', puestos: 1}
     ,'3DU': {nombre: 'Aleja Fonseca', puestos: 1}
+};
+
+const textosPersonalizados = {
+    reserva: {
+        singular: 'con mucho cariño hemos reservado <b>1 lugar</b> para ti',
+        plural: 'con mucho cariño hemos reservado <b>{puestos} lugares</b> para ustedes'
+    },
+    invitacion: {
+        singular: 'Te invitamos a compartir con nosotros este día tan especial, en el que uniremos nuestros caminos en uno solo',
+        plural: 'Les invitamos a compartir con nosotros este día tan especial, en el que uniremos nuestros caminos en uno solo'
+    },
+    obsequio: {
+        singular: 'Tu presencia es nuestro mejor regalo, pero si deseas tener un detalle con nosotros, lluvia de sobres será bienvenida',
+        plural: 'Su presencia es nuestro mejor regalo, pero si desean tener un detalle con nosotros, lluvia de sobres será bienvenida'
+    },
+    confirmacion: {
+        singular: 'Para poder preparar todo con cariño para este día, te agradecemos confirmar tu asistencia antes del <b>1 de noviembre</b>',
+        plural: 'Para poder preparar todo con cariño para este día, les agradecemos confirmar su asistencia antes del <b>1 de noviembre</b>'
+    }
 };
