@@ -1,83 +1,81 @@
 const listaInvitados = {
-    'pLw': {nombre: 'Rudy y Rocío Garrido', puestos: 2}
+    'pLw': {nombre: 'Rudy & Rocío Garrido', puestos: 2}
     ,'qgk': {nombre: 'Ana María Garrido', puestos: 1}
     ,'IbI': {nombre: 'Abuelito', puestos: 1}
-    ,'LBK': {nombre: 'Jose y Sara Mejía', puestos: 2}
+    ,'LBK': {nombre: 'Jose & Sara Mejía', puestos: 2}
     ,'IdK': {nombre: 'Augusto Barragán', puestos: 1}
     ,'6lD': {nombre: 'Andrés Bernal', puestos: 1}
     ,'Put': {nombre: 'Daniel Suárez', puestos: 1}
     ,'gVO': {nombre: 'Rubén Obando', puestos: 1}
     ,'sJr': {nombre: 'Andrés Báez', puestos: 1}
-    ,'A8T': {nombre: 'Stepha', puestos: 1}
+    ,'A8T': {nombre: 'Stephanie Ávila', puestos: 1}
     ,'nPh': {nombre: 'Diego Vásquez', puestos: 1}
-    ,'Dhj': {nombre: 'David Bravo', puestos: 1}
     ,'uYg': {nombre: 'Lucho Andrade', puestos: 1}
-    ,'ydM': {nombre: 'Nath - Data', puestos: 1}
-    ,'Drn': {nombre: 'Jhon Panche', puestos: 1}
-    ,'Imi': {nombre: 'Edward Rojas y Señora', puestos: 2}
-    ,'g3W': {nombre: 'Pipe y Vale Hernández', puestos: 2}
+    ,'ydM': {nombre: 'Nath Ramírez', puestos: 1}
+    ,'Drn': {nombre: 'John Panche', puestos: 1}
+    ,'g3W': {nombre: 'Pipe & Vale Hernández', puestos: 2}
     ,'lkF': {nombre: 'David Hernández', puestos: 1}
-    ,'uRp': {nombre: 'Daniel y Jenny Beltrán', puestos: 2}
+    ,'uRp': {nombre: 'Daniel & Jenny Beltrán', puestos: 2}
     ,'9bk': {nombre: 'David Arana', puestos: 1}
     ,'3lW': {nombre: 'Andrés Mosquera', puestos: 1}
     ,'Q0V': {nombre: 'Linda Hernández', puestos: 1}
-    ,'5Ar': {nombre: 'Edgar y Liliana Toquica', puestos: 2}
+    ,'5Ar': {nombre: 'Edgar & Liliana Toquica', puestos: 2}
     ,'21g': {nombre: 'David Toquica', puestos: 1}
-    ,'Z6D': {nombre: 'Julián y Edna Palma', puestos: 2}
+    ,'Z6D': {nombre: 'Julián & Edna Palma', puestos: 2}
     ,'OnZ': {nombre: 'Estelita Sánchez', puestos: 1}
     ,'Bmy': {nombre: 'Magda Sánchez', puestos: 1}
-    ,'yi1': {nombre: 'Juanca y Laura Reina', puestos: 2}
-    ,'bf8': {nombre: 'Ricardo y Marta Mejía', puestos: 2}
+    ,'yi1': {nombre: 'Juanca & Laura Reina', puestos: 2}
+    ,'bf8': {nombre: 'Ricardo & Martica Mejía', puestos: 2}
     ,'rci': {nombre: 'Mario Mejía', puestos: 1}
-    ,'dGO': {nombre: 'Carlos y Valeria Mejía', puestos: 2}
-    ,'6T6': {nombre: 'Memo y Erika Hernández', puestos: 2}
-    ,'6c6': {nombre: 'Nicolás y Laura Reyes', puestos: 2}
-    ,'BcZ': {nombre: 'Samuel Yánez y Cata Rubiano', puestos: 2}
+    ,'dGO': {nombre: 'Carlos & Vale Mejía', puestos: 2}
+    ,'6T6': {nombre: 'Memo & Érika Hernández', puestos: 2}
+    ,'6c6': {nombre: 'Nico y Laura Reyes', puestos: 2}
+    ,'BcZ': {nombre: 'Samu Yánez y Cata Rubiano', puestos: 2}
     ,'BV2': {nombre: 'Sebas Rubiano y Vale Castillo', puestos: 2}
-    ,'8YF': {nombre: 'Freddy y Paty Rodríguez', puestos: 2}
-    ,'3Rz': {nombre: 'Edilberto, Martica y Juli Bocanegra', puestos: 3}
-    ,'bc0': {nombre: 'Jairito, Anita y Josué Bocanegra', puestos: 3}
-    ,'UkI': {nombre: 'Ramoncito y Martica Riascos', puestos: 2}
-    ,'VK8': {nombre: 'Juan Andrés Riascos y Laurita', puestos: 2}
+    ,'8YF': {nombre: 'Freddy & Paty Rodríguez', puestos: 2}
+    ,'3Rz': {nombre: 'Edil, Martica & Juli Bocanegra', puestos: 3}
+    ,'bc0': {nombre: 'Jairito, Anita & Josué Bocanegra', puestos: 3}
+    ,'UkI': {nombre: 'Ramoncito & Martica Riascos', puestos: 2}
+    ,'VK8': {nombre: 'Juan Riascos & Laurita', puestos: 2}
     ,'QEq': {nombre: 'Camilo Riascos', puestos: 1}
-    ,'0Rw': {nombre: 'Jeffer, Anita y Macarena Riascos', puestos: 2}
+    ,'0Rw': {nombre: 'Jeffer, Anita & Macarena Riascos', puestos: 2}
     ,'AkL': {nombre: 'Abuelita Clarita', puestos: 1}
     ,'sic': {nombre: 'Andrés Peña', puestos: 1}
-    ,'Imn': {nombre: 'Héctor Peña y Samuel Peña', puestos: 2}
-    ,'VCQ': {nombre: 'Bladimir, Zuleny, Emanuel y María Peña', puestos: 4}
-    ,'7TF': {nombre: 'Juan Manuel y Aireen Galindo', puestos: 2}
+    ,'Imn': {nombre: 'Héctor Peña & Samuel Peña', puestos: 2}
+    ,'VCQ': {nombre: 'Bladi, Zuleny, Emanuel & María Peña', puestos: 4}
+    ,'7TF': {nombre: 'Juan Manuel & Aireen Galindo', puestos: 2}
     ,'me0': {nombre: 'María Paula Ariza', puestos: 1}
-    ,'fdB': {nombre: 'Gabo y Ángela Serrano', puestos: 2}
+    ,'fdB': {nombre: 'Gabo & Ángela Serrano', puestos: 2}
     ,'0br': {nombre: 'Pablo Vásquez', puestos: 1}
     ,'cVY': {nombre: 'Angie Vásquez', puestos: 1}
     ,'gx7': {nombre: 'Juan Tunja', puestos: 1}
     ,'uxU': {nombre: 'Anita Tunja', puestos: 1}
-    ,'1vw': {nombre: 'Diego Alejandro Tunja', puestos: 1}
-    ,'tlx': {nombre: 'Diego Isaac Tunja', puestos: 1}
+    ,'1vw': {nombre: 'Diego Alejandro', puestos: 1}
+    ,'tlx': {nombre: 'Diego Isaac', puestos: 1}
     ,'Mcf': {nombre: 'Samuel Tunja', puestos: 1}
-    ,'muE': {nombre: 'Ricardo, Nati y Juampa Trujillo', puestos: 3}
-    ,'NmZ': {nombre: 'Carlitos, Luz Marina y Daniel Díaz', puestos: 3}
-    ,'PGQ': {nombre: 'Christian y Natalia Yanez', puestos: 2}
+    ,'muE': {nombre: 'Ric, Nati & Juampa Trujillo', puestos: 3}
+    ,'NmZ': {nombre: 'Carlitos, Luz Marina & Daniel Díaz', puestos: 3}
+    ,'PGQ': {nombre: 'Chris & Nata Yánez', puestos: 2}
     ,'YSZ': {nombre: 'Daniel Camacho', puestos: 1}
     ,'fQO': {nombre: 'Juancho Camacho', puestos: 1}
-    ,'dO5': {nombre: 'Fidel y Linda Torres', puestos: 2}
-    ,'3vu': {nombre: 'Freddy y Martica Beltrán', puestos: 2}
+    ,'dO5': {nombre: 'Fidel & Linda Torres', puestos: 2}
+    ,'3vu': {nombre: 'Freddy & Martica Beltrán', puestos: 2}
     ,'Q0U': {nombre: 'Helen Orozco', puestos: 1}
-    ,'LQk': {nombre: 'Jors y Joha Moreno', puestos: 2}
-    ,'CBt': {nombre: 'Juampa Mendoza y Eri Morales', puestos: 2}
+    ,'LQk': {nombre: 'Jors & Joha Moreno', puestos: 2}
+    ,'CBt': {nombre: 'Juampa Mendoza & Eri Morales', puestos: 2}
     ,'jfs': {nombre: 'Merly Gómez', puestos: 1}
-    ,'Iyj': {nombre: 'Oscar y Eli Salas', puestos: 2}
-    ,'dIT': {nombre: 'Pablo y Nadia Marín', puestos: 2}
-    ,'Mqt': {nombre: 'Pipe y Janis Fernández', puestos: 2}
-    ,'PjR': {nombre: 'Pipe Santamaría y Camila Galindo', puestos: 2}
-    ,'7ON': {nombre: 'Ricardo y Olgui Walteros', puestos: 2}
+    ,'Iyj': {nombre: 'Oscar & Eli Salas', puestos: 2}
+    ,'dIT': {nombre: 'Pablo & Nadia Marín', puestos: 2}
+    ,'Mqt': {nombre: 'Pipe & Janis Fernández', puestos: 2}
+    ,'PjR': {nombre: 'Pipe Santamaría & Camila Galindo', puestos: 2}
+    ,'7ON': {nombre: 'Ricardo & Olgui Walteros', puestos: 2}
     ,'aLE': {nombre: 'Sofía Walteros', puestos: 1}
     ,'eJv': {nombre: 'Natalia Walteros', puestos: 1}
     ,'znF': {nombre: 'Santi Villamil', puestos: 1}
-    ,'BSL': {nombre: 'Sebas y Nata Perilla', puestos: 2}
+    ,'BSL': {nombre: 'Sebas & Nata Perilla', puestos: 2}
     ,'vGm': {nombre: 'Sergio Hidalgo', puestos: 1}
-    ,'VgW': {nombre: 'Steven Ramírez y Daniela Higuera', puestos: 2}
-    ,'Jbu': {nombre: 'Wilson y Liliana Casas', puestos: 2}
+    ,'VgW': {nombre: 'Steven Ramírez & Daniela Higuera', puestos: 2}
+    ,'Jbu': {nombre: 'Wilson & Liliana Casas', puestos: 2}
     ,'GU4': {nombre: 'Edwin Contreras', puestos: 1}
     ,'MNX': {nombre: 'Wilson & Stellita Ruiz', puestos: 2}
     ,'Jvb': {nombre: 'Camilo Ruiz', puestos: 1}
@@ -177,5 +175,9 @@ const textosPersonalizados = {
     confirmacion: {
         singular: 'Para poder preparar todo con cariño para este día, te agradecemos confirmar tu asistencia antes del <b>1 de noviembre</b>',
         plural: 'Para poder preparar todo con cariño para este día, les agradecemos confirmar su asistencia antes del <b>1 de noviembre</b>'
+    },
+    whatsapp: {
+        singular: 'Soy {nombre}. Confirmo mi asistencia a tu boda (1 puesto). ¡Nos vemos allí!',
+        plural: 'Somos {nombre}. Confirmamos nuestra asistencia a tu boda ({puestos} puestos). ¡Nos vemos allí!'
     }
 };

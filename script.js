@@ -47,14 +47,19 @@ window.addEventListener('load', function() {
             const texto = esSingular ? textosPersonalizados.confirmacion.singular : textosPersonalizados.confirmacion.plural;
             textoConfirmacionP.innerHTML = `${texto}`;
         }
-        // --- Personalizar botones de WhatsApp ---
-        if (botonConfirmarLukas) {
-            const mensajeWhatsApp = `¡Hola Lukas! Soy ${invitado.nombre}. Confirmo la asistencia (${invitado.puestos} puestos) a su boda. ¡Nos vemos allí!`;
-            botonConfirmarLukas.href = `https://wa.me/573506854921?text=${encodeURIComponent(mensajeWhatsApp)}`;
-        }
-        if (botonConfirmarSarita) {
-            const mensajeWhatsApp = `¡Hola Sarita! Soy ${invitado.nombre}. Confirmo la asistencia (${invitado.puestos} puestos) a su boda. ¡Nos vemos allí!`;
-            botonConfirmarSarita.href = `https://wa.me/573506854921?text=${encodeURIComponent(mensajeWhatsApp)}`;
+        // --- Botones Confirmar Asistencia ---
+        if (botonConfirmarLukas && botonConfirmarSarita) {
+            // 1. Seleccionar la plantilla del cuerpo del mensaje (singular o plural)
+            const mensajeBodyTemplate = esSingular 
+                ? textosPersonalizados.whatsapp.singular 
+                : textosPersonalizados.whatsapp.plural;
+            // 2. Reemplazar los marcadores de posición para crear el cuerpo del mensaje final
+            const mensajeBody = mensajeBodyTemplate
+                .replace('{nombre}', invitado.nombre)
+                .replace('{puestos}', invitado.puestos);
+            // 3. Construir y asignar el mensaje completo para cada botón
+            botonConfirmarLukas.href = `https://wa.me/573506854921?text=${encodeURIComponent('¡Hola, Lukas! ' + mensajeBody)}`;
+            botonConfirmarSarita.href = `https://wa.me/573123243483?text=${encodeURIComponent('¡Hola, Sarita! ' + mensajeBody)}`;
         }
     }
 
@@ -132,4 +137,45 @@ window.addEventListener('load', function() {
             document.getElementById("texto-faltan").innerHTML = "";
         }
     }, 1000);
+
+    // --- Lógica de la GALERÍA DEL FOOTER ---
+    function inicializarGaleria() {
+        const track = document.querySelector('.galeria-track');
+        if (!track) return;
+
+        // Lista de tus fotos en la carpeta /galeria
+        const nombresFotos = [
+            '1.jpg'
+            ,'2.jpg'
+            ,'3.jpg'
+            ,'4.jpg'
+            ,'5.jpg'
+            ,'6.jpg'
+            ,'7.jpg'
+            ,'8.jpg'
+            ,'9.jpg'
+            ,'10.jpg'
+            ,'11.jpg'
+            ,'12.jpg'
+        ];
+
+        // Duplicamos la lista de fotos para crear el efecto de bucle infinito
+        const fotosParaGaleria = [...nombresFotos, ...nombresFotos];
+
+        // Creamos y añadimos los elementos <img> al track
+        fotosParaGaleria.forEach(nombreFoto => {
+            const img = document.createElement('img');
+            img.src = `images/galeria/${nombreFoto}`;
+            img.alt = "Recuerdo de Lukas y Sarita";
+            track.appendChild(img);
+        });
+
+        // Calculamos la duración de la animación basada en el número de fotos
+        const duracionAnimacion = nombresFotos.length * 5; // 5 segundos por foto (ajusta si quieres)
+
+        // Aplicamos la animación
+        track.style.animation = `scroll ${duracionAnimacion}s linear infinite`;
+    }
+
+    inicializarGaleria();
 });
