@@ -145,13 +145,13 @@ window.addEventListener('load', function() {
 
         // Lista de tus fotos en la carpeta /galeria
         const nombresFotos = [
-            '1.jpg'
-            ,'2.jpg'
-            ,'3.jpg'
-            ,'4.jpg'
-            ,'5.jpg'
-            ,'6.jpg'
-            ,'7.jpg'
+            '1.JPG'
+            ,'2.JPG'
+            ,'3.JPG'
+            ,'4.JPG'
+            ,'5.JPG'
+            ,'6.JPG'
+            ,'7.JPG'
             ,'8.jpg'
             ,'9.jpg'
             ,'10.jpg'
