@@ -19,6 +19,7 @@ window.addEventListener('load', function() {
         const nombreInvitadoSpan = document.getElementById('nombre-invitado');
         const textoReservaCompleto = document.querySelector('.texto-reserva'); // Seleccionamos el párrafo completo
         const textoInvitacionP = document.querySelector('.seccion-texto-invitacion .texto-invitacion'); // Seleccionamos el párrafo
+        const textoPuestosReservados = document.getElementById('puestos-reservados');
         const textoConfirmacionP = document.getElementById('texto-confirmacion');
         const textoObsequioP = document.getElementById('texto-obsequio');
         const botonConfirmarLukas = document.querySelector('.boton-confirmar-lukas');
@@ -36,6 +37,10 @@ window.addEventListener('load', function() {
         if (textoInvitacionP) {
             const texto = esSingular ? textosPersonalizados.invitacion.singular : textosPersonalizados.invitacion.plural;
             textoInvitacionP.innerHTML = `<b>${invitado.nombre}:</b> ${texto}`;
+        }
+        if (textoPuestosReservados) {
+            const texto = esSingular ? textosPersonalizados.puestos_reservados.singular : textosPersonalizados.puestos_reservados.plural.replace('{puestos}', invitado.puestos);
+            textoPuestosReservados.innerHTML = `${texto}`;
         }
         // Texto de la sección de obsequio
         if (textoObsequioP) {
@@ -135,46 +140,113 @@ window.addEventListener('load', function() {
             clearInterval(countdownInterval);
             document.getElementById("countdown-timer").innerHTML = "<p class='fecha-boda'>¡LLEGÓ EL MOMENTO!</p>";
             document.getElementById("texto-faltan").innerHTML = "";
+            document.getElementById("texto-faltan-final").innerHTML = "";
         }
     }, 1000);
 
-    // --- Lógica de la GALERÍA DEL FOOTER ---
+    // --- Lógica de la GALERÍA DEL FOOTER (VERSIÓN INTERACTIVA) ---
     function inicializarGaleria() {
+        const container = document.querySelector('.galeria-container');
         const track = document.querySelector('.galeria-track');
-        if (!track) return;
+        if (!container || !track) return;
 
-        // Lista de tus fotos en la carpeta /galeria
         const nombresFotos = [
-            '1_c.jpg'
-            ,'2_c.jpg'
-            ,'3_c.jpg'
-            ,'4_c.jpg'
-            ,'5_c.jpg'
-            ,'6_c.jpg'
-            ,'7_c.jpg'
-            ,'8_c.jpg'
-            ,'9_c.jpg'
-            ,'10_c.jpg'
-            ,'11_c.jpg'
-            ,'12_c.jpg'
+            '1_c.jpg', '2_c.jpg', '3_c.jpg', '4_c.jpg', '5_c.jpg', '6_c.jpg',
+            '7_c.jpg', '8_c.jpg', '9_c.jpg', '10_c.jpg', '11_c.jpg', '12_c.jpg'
         ];
 
-        // Duplicamos la lista de fotos para crear el efecto de bucle infinito
-        const fotosParaGaleria = [...nombresFotos, ...nombresFotos];
-
-        // Creamos y añadimos los elementos <img> al track
-        fotosParaGaleria.forEach(nombreFoto => {
+        // Duplicar para el bucle infinito
+        [...nombresFotos, ...nombresFotos].forEach(nombreFoto => {
             const img = document.createElement('img');
             img.src = `images/galeria/${nombreFoto}`;
             img.alt = "Recuerdo de Lukas y Sarita";
             track.appendChild(img);
         });
 
-        // Calculamos la duración de la animación basada en el número de fotos
-        const duracionAnimacion = nombresFotos.length * 5; // 5 segundos por foto (ajusta si quieres)
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let animationFrameId;
+        let currentX = 0;
+        let autoScrollSpeed = 0.5; // Ajusta la velocidad del scroll automático (ej: 0.5)
 
-        // Aplicamos la animación
-        track.style.animation = `scroll ${duracionAnimacion}s linear infinite`;
+        // Función de auto-scroll
+        const autoScroll = () => {
+            currentX -= autoScrollSpeed;
+            const halfWidth = track.scrollWidth / 2;
+            if (Math.abs(currentX) >= halfWidth) {
+                currentX += halfWidth;
+            }
+            track.style.transform = `translateX(${currentX}px)`;
+            animationFrameId = requestAnimationFrame(autoScroll);
+        };
+
+        const startAutoScroll = () => {
+            if (!animationFrameId) {
+                animationFrameId = requestAnimationFrame(autoScroll);
+            }
+        };
+
+        const stopAutoScroll = () => {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+        };
+
+        // Eventos de arrastre con el ratón
+        container.addEventListener('mousedown', (e) => {
+            isDown = true;
+            container.classList.add('grabbing');
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = currentX;
+            stopAutoScroll();
+        });
+
+        container.addEventListener('mouseleave', () => {
+            if (isDown) {
+                isDown = false;
+                container.classList.remove('grabbing');
+                startAutoScroll();
+            }
+        });
+
+        container.addEventListener('mouseup', () => {
+            isDown = false;
+            container.classList.remove('grabbing');
+            startAutoScroll();
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 2; // El *2 hace que el arrastre sea más sensible
+            currentX = scrollLeft + walk;
+            track.style.transform = `translateX(${currentX}px)`;
+        });
+
+        // Eventos para dispositivos táctiles
+        container.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - container.offsetLeft;
+            scrollLeft = currentX;
+            stopAutoScroll();
+        });
+
+        container.addEventListener('touchend', () => {
+            isDown = false;
+            startAutoScroll();
+        });
+
+        container.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            const x = e.touches[0].pageX - container.offsetLeft;
+            const walk = (x - startX) * 2;
+            currentX = scrollLeft + walk;
+            track.style.transform = `translateX(${currentX}px)`;
+        });
+
+        // Iniciar el carrusel
+        startAutoScroll();
     }
 
     inicializarGaleria();

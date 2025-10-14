@@ -6,7 +6,6 @@ const listaInvitados = {
     ,'IdK': {nombre: 'Augusto Barragán', puestos: 1}
     ,'6lD': {nombre: 'Andrés Bernal', puestos: 1}
     ,'Put': {nombre: 'Daniel Suárez', puestos: 1}
-    ,'gVO': {nombre: 'Rubén Obando', puestos: 1}
     ,'sJr': {nombre: 'Andrés Báez', puestos: 1}
     ,'A8T': {nombre: 'Stephanie Ávila', puestos: 1}
     ,'nPh': {nombre: 'Diego Vásquez', puestos: 1}
@@ -29,9 +28,9 @@ const listaInvitados = {
     ,'rci': {nombre: 'Mario Mejía', puestos: 1}
     ,'dGO': {nombre: 'Carlos & Vale Mejía', puestos: 2}
     ,'6T6': {nombre: 'Memo & Érika Hernández', puestos: 2}
-    ,'6c6': {nombre: 'Nico y Laura Reyes', puestos: 2}
-    ,'BcZ': {nombre: 'Samu Yánez y Cata Rubiano', puestos: 2}
-    ,'BV2': {nombre: 'Sebas Rubiano y Vale Castillo', puestos: 2}
+    ,'6c6': {nombre: 'Nico & Laura Reyes', puestos: 2}
+    ,'BcZ': {nombre: 'Samu Yánez & Cata Rubiano', puestos: 2}
+    ,'BV2': {nombre: 'Sebas Rubiano & Vale Castillo', puestos: 2}
     ,'8YF': {nombre: 'Freddy & Paty Rodríguez', puestos: 2}
     ,'3Rz': {nombre: 'Edil, Martica & Juli Bocanegra', puestos: 3}
     ,'bc0': {nombre: 'Jairito, Anita & Josué Bocanegra', puestos: 3}
@@ -40,7 +39,7 @@ const listaInvitados = {
     ,'QEq': {nombre: 'Camilo Riascos', puestos: 1}
     ,'0Rw': {nombre: 'Jeffer, Anita & Macarena Riascos', puestos: 2}
     ,'AkL': {nombre: 'Abuelita Clarita', puestos: 1}
-    ,'sic': {nombre: 'Andrés Peña', puestos: 1}
+    ,'sic': {nombre: 'Andrés, Eliana & Gaby Peña', puestos: 3}
     ,'Imn': {nombre: 'Héctor Peña & Samuel Peña', puestos: 2}
     ,'VCQ': {nombre: 'Bladi, Zuleny, Emanuel & María Peña', puestos: 4}
     ,'7TF': {nombre: 'Juan Manuel & Aireen Galindo', puestos: 2}
@@ -50,8 +49,8 @@ const listaInvitados = {
     ,'cVY': {nombre: 'Angie Vásquez', puestos: 1}
     ,'gx7': {nombre: 'Juan Tunja', puestos: 1}
     ,'uxU': {nombre: 'Anita Tunja', puestos: 1}
-    ,'1vw': {nombre: 'Diego Alejandro', puestos: 1}
-    ,'tlx': {nombre: 'Diego Isaac', puestos: 1}
+    ,'1vw': {nombre: 'Diego Alejandro Tunja', puestos: 1}
+    ,'tlx': {nombre: 'Diego Isaac Tunja', puestos: 1}
     ,'Mcf': {nombre: 'Samuel Tunja', puestos: 1}
     ,'muE': {nombre: 'Ric, Nati & Juampa Trujillo', puestos: 3}
     ,'NmZ': {nombre: 'Carlitos, Luz Marina & Daniel Díaz', puestos: 3}
@@ -67,7 +66,7 @@ const listaInvitados = {
     ,'Iyj': {nombre: 'Oscar & Eli Salas', puestos: 2}
     ,'dIT': {nombre: 'Pablo & Nadia Marín', puestos: 2}
     ,'Mqt': {nombre: 'Pipe & Janis Fernández', puestos: 2}
-    ,'PjR': {nombre: 'Pipe Santamaría & Camila Galindo', puestos: 2}
+    ,'PjR': {nombre: 'Pipe Santamaría', puestos: 1}
     ,'7ON': {nombre: 'Ricardo & Olgui Walteros', puestos: 2}
     ,'aLE': {nombre: 'Sofía Walteros', puestos: 1}
     ,'eJv': {nombre: 'Natalia Walteros', puestos: 1}
@@ -82,9 +81,9 @@ const listaInvitados = {
     ,'56i': {nombre: 'Camila Ruiz', puestos: 1}
     ,'ZKn': {nombre: 'David & Yudy Pantano', puestos: 2}
     ,'xi2': {nombre: 'David & Paola Arias', puestos: 2}
-    ,'eOo': {nombre: 'Miguel & Daly Rodriguez', puestos: 2}
+    ,'eOo': {nombre: 'Miguel & Daly Rodríguez', puestos: 2}
     ,'hNX': {nombre: 'Alex & Tatiana Pinzón', puestos: 2}
-    ,'F19': {nombre: 'Sofia Romero', puestos: 1}
+    ,'F19': {nombre: 'Sofía Romero', puestos: 1}
     ,'0wQ': {nombre: 'Amparito Romero', puestos: 1}
     ,'Dyq': {nombre: 'Paula Romero', puestos: 1}
     ,'H8x': {nombre: 'Familia Niño Rueda', puestos: 4}
@@ -93,35 +92,33 @@ const listaInvitados = {
     ,'dCJ': {nombre: 'Reinaldo & Jenifer Blanco', puestos: 2}
     ,'6YQ': {nombre: 'Isai Victorino', puestos: 1}
     ,'d1C': {nombre: 'Humberto & Luna Victorino', puestos: 2}
-    ,'4ZF': {nombre: 'Raquel Victorino', puestos: 1}
-    ,'t9u': {nombre: 'Elisa Mona', puestos: 1}
+    ,'4ZF': {nombre: 'Raquel & Cora Victorino', puestos: 2}
+    ,'t9u': {nombre: 'Elisa Victorino', puestos: 1}
     ,'b5P': {nombre: 'Sebastián Quitián', puestos: 1}
-    ,'mkq': {nombre: 'Javier & Gloria', puestos: 2}
-    ,'BiP': {nombre: 'Camilo & Lorena', puestos: 2}
+    ,'mkq': {nombre: 'Javier & Gloria López', puestos: 2}
+    ,'BiP': {nombre: 'Camilo & Lorena Ramírez', puestos: 2}
     ,'yaC': {nombre: 'Paola Mendez', puestos: 1}
     ,'6tI': {nombre: 'Brayhan Moreno', puestos: 1}
     ,'poE': {nombre: 'Valentina Buitrago', puestos: 1}
-    ,'k10': {nombre: 'Diana Alvarez', puestos: 1}
+    ,'k10': {nombre: 'Diana Álvarez', puestos: 1}
     ,'ves': {nombre: 'Oscar & Johana Bernal', puestos: 2}
     ,'2Ti': {nombre: 'Carla Romero', puestos: 1}
     ,'jC1': {nombre: 'Camilo Romero', puestos: 1}
-    ,'mSt': {nombre: 'Marlon Paez', puestos: 1}
+    ,'mSt': {nombre: 'Marlon Páez', puestos: 1}
     ,'vmA': {nombre: 'Santiago Guavita', puestos: 1}
     ,'eEi': {nombre: 'Juan Pablo & Milena Valiente', puestos: 2}
     ,'w8l': {nombre: 'Vanessa', puestos: 1}
     ,'rgb': {nombre: 'Valentina Rodríguez', puestos: 1}
-    ,'hp5': {nombre: 'Gerardo & Monica Corredor', puestos: 2}
+    ,'hp5': {nombre: 'Gerardo & Mónica Corredor', puestos: 2}
     ,'yoM': {nombre: 'Angell Ariza', puestos: 1}
     ,'54f': {nombre: 'Valentina Ariza', puestos: 1}
     ,'axe': {nombre: 'Saúl & Claudia Ariza', puestos: 2}
-    ,'vFe': {nombre: 'Alejandra Barragán', puestos: 1}
-    ,'LmR': {nombre: 'Alejandro Gómez', puestos: 1}
+    ,'vFe': {nombre: 'Alejandra Barragán & Alejandro Gómez', puestos: 2}
     ,'OpK': {nombre: 'Tilcia Traslaviña', puestos: 1}
     ,'xnl': {nombre: 'Neil Ariza', puestos: 1}
-    ,'zYf': {nombre: 'Maicol Ariza', puestos: 1}
-    ,'DbD': {nombre: 'Johana Niño', puestos: 1}
+    ,'zYf': {nombre: 'Maicol Ariza & Johana Niño', puestos: 2}
     ,'7eN': {nombre: 'Lucero Ariza', puestos: 1}
-    ,'zHp': {nombre: 'Camilo & Sofia Ariza', puestos: 2}
+    ,'zHp': {nombre: 'Camilo & Sofía Ariza', puestos: 2}
     ,'ttL': {nombre: 'Santiago Ariza', puestos: 1}
     ,'VuZ': {nombre: 'Iris & Salomé Ariza', puestos: 2}
     ,'0tj': {nombre: 'Edgar & Mery Rueda', puestos: 2}
@@ -135,7 +132,7 @@ const listaInvitados = {
     ,'IS8': {nombre: 'Maicol & Laura Villafañe', puestos: 2}
     ,'2in': {nombre: 'Carmen Escamilla', puestos: 1}
     ,'9j7': {nombre: 'Familia Ávila', puestos: 3}
-    ,'hXK': {nombre: 'José & Luz marina Corredor', puestos: 2}
+    ,'hXK': {nombre: 'José & Luz Marina Corredor', puestos: 2}
     ,'EU5': {nombre: 'José David & Laura Corredor', puestos: 2}
     ,'mbM': {nombre: 'Reynel Corredor', puestos: 1}
     ,'VMd': {nombre: 'Orlando & Yenny Contreras', puestos: 2}
@@ -149,14 +146,15 @@ const listaInvitados = {
     ,'huS': {nombre: 'Wilmar & Andreita Cañón', puestos: 2}
     ,'hAw': {nombre: 'Diana Moreno', puestos: 1}
     ,'vTm': {nombre: 'Natalia Moreno', puestos: 1}
-    ,'shY': {nombre: 'Andreina Piela', puestos: 1}
+    ,'shY': {nombre: 'Andreina Pirela', puestos: 1}
     ,'wJs': {nombre: 'Sergio Garzón', puestos: 1}
     ,'iVx': {nombre: 'Nacir Mejía', puestos: 1}
-    ,'rvm': {nombre: 'Orlando UA', puestos: 1}
+    ,'rvm': {nombre: 'Orlando Ariza', puestos: 1}
     ,'NAa': {nombre: 'Shery Sáenz', puestos: 1}
     ,'OAQ': {nombre: 'Jhon Castillo', puestos: 1}
     ,'kI4': {nombre: 'Paula Solano', puestos: 1}
     ,'3DU': {nombre: 'Aleja Fonseca', puestos: 1}
+    ,'4jp': {nombre: 'Familia Sánchez López', puestos: 3}
 };
 
 const textosPersonalizados = {
@@ -167,6 +165,10 @@ const textosPersonalizados = {
     invitacion: {
         singular: 'Te invitamos a compartir con nosotros este día tan especial, en el que uniremos nuestros caminos en uno solo',
         plural: 'Les invitamos a compartir con nosotros este día tan especial, en el que uniremos nuestros caminos en uno solo'
+    },
+    puestos_reservados: {
+        singular: '',
+        plural: 'Puestos reservados para ustedes: {puestos}'
     },
     obsequio: {
         singular: 'Tu presencia es nuestro mejor regalo, pero si deseas tener un detalle con nosotros, lluvia de sobres será bienvenida',

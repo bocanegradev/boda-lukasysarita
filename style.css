@@ -514,36 +514,47 @@ body.no-scroll {
 
 .galeria-container {
     width: 100%;
-    height: 200px; /* Alto fijo que pediste */
-    overflow: hidden; /* Oculta las fotos que están fuera del área visible */
+    height: 200px;
+    overflow: hidden;
     position: relative;
-    margin-bottom: 0; /* Espacio entre la galería y el texto del footer */
+    margin-bottom: 0;
+    cursor: grab; /* Indica que se puede arrastrar */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.galeria-container.grabbing {
+    cursor: grabbing; /* Cambia el cursor mientras se arrastra */
 }
 
 .galeria-track {
-    display: flex; /* Pone las imágenes en una fila horizontal */
+    display: flex;
     position: absolute;
     left: 0;
-    /* La animación se aplicará aquí desde JS */
+    will-change: transform; /* Optimización para el navegador */
 }
 
 .galeria-track img {
-    height: 200px; /* Asegura que todas las imágenes tengan el alto fijo */
-    width: auto; /* Mantiene la proporción de la imagen */
-    margin: 0 5px; /* Pequeño espacio entre fotos */
+    height: 200px;
+    width: auto;
+    margin: 0 5px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    user-select: none; /* Evita que las imágenes se seleccionen al arrastrar */
+    pointer-events: none; /* Evita que la imagen interfiera con el evento de arrastre */
 }
 
-/* Animación de scroll */
+/* Eliminamos la animación CSS de aquí, ahora la controla JS */
+/*
 @keyframes scroll {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%); /* Mueve el track hasta la mitad (el inicio de la copia) */
+        transform: translateX(-50%);
     }
 }
+*/
 
 
 /* ==========================================================================
