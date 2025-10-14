@@ -58,7 +58,7 @@ body.no-scroll {
     top: 0;
     right: 0;
     width: 400px !important;
-    transform: translate(15%, -16%);
+    transform: translate(30%, -16%);
 }
 
 .contenido-entrada {
@@ -519,8 +519,8 @@ body.no-scroll {
     position: relative;
     margin-bottom: 0;
     cursor: grab; /* Indica que se puede arrastrar */
-    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .galeria-container.grabbing {
