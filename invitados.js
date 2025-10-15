@@ -47,11 +47,11 @@ const listaInvitados = {
     ,'fdB': {nombre: 'Gabo & Ángela Serrano', puestos: 2}
     ,'0br': {nombre: 'Pablo Vásquez', puestos: 1}
     ,'cVY': {nombre: 'Angie Vásquez', puestos: 1}
-    ,'gx7': {nombre: 'Juan Tunja', puestos: 1}
-    ,'uxU': {nombre: 'Anita Tunja', puestos: 1}
-    ,'1vw': {nombre: 'Diego Alejandro Tunja', puestos: 1}
-    ,'tlx': {nombre: 'Diego Isaac Tunja', puestos: 1}
-    ,'Mcf': {nombre: 'Samuel Tunja', puestos: 1}
+    ,'gx7': {nombre: 'Juan Rojas', puestos: 1}
+    ,'uxU': {nombre: 'Anita Rojas', puestos: 1}
+    ,'1vw': {nombre: 'Diego Alejandro Pineda', puestos: 1}
+    ,'tlx': {nombre: 'Diego Isaac García', puestos: 1}
+    ,'Mcf': {nombre: 'Samuel Rojas', puestos: 1}
     ,'muE': {nombre: 'Ric, Nati & Juampa Trujillo', puestos: 3}
     ,'NmZ': {nombre: 'Carlitos, Luz Marina & Daniel Díaz', puestos: 3}
     ,'PGQ': {nombre: 'Chris & Nata Yánez', puestos: 2}
