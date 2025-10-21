@@ -72,7 +72,7 @@ const listaInvitados = {
     ,'eJv': {nombre: 'Natalia Walteros', puestos: 1}
     ,'znF': {nombre: 'Santi Villamil', puestos: 1}
     ,'BSL': {nombre: 'Sebas & Nata Perilla', puestos: 2}
-    ,'vGm': {nombre: 'Sergio Hidalgo', puestos: 1}
+    ,'vGm': {nombre: 'Sergio Hidalgo & Angie Montaña', puestos: 2}
     ,'VgW': {nombre: 'Steven Ramírez & Daniela Higuera', puestos: 2}
     ,'Jbu': {nombre: 'Wilson & Liliana Casas', puestos: 2}
     ,'GU4': {nombre: 'Edwin Contreras', puestos: 1}
